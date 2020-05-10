@@ -27,11 +27,6 @@ public class PacManNavigatorImpl_Skeleton extends PacManMaze implements PacManNa
     }
 
     @Override
-    public int getPelletsLeft() {
-        return super.getPelletsLeft();
-    }
-
-    @Override
     public boolean noMorePelletsToGather() {
         throw new RuntimeException("NOT YET IMPLEMENTED!!");
     }
