@@ -12,7 +12,7 @@ public interface PacManNavigator {
         |* * * * * * * * * * * * * * * * * * *| 02
         |*|---|*|-----|*|-----|*|---|*|-----|*| 03
         |*|---|*|-----|*|-----|*|---|*|-----|*| 04
-        |* * * * * * * * * S * * * * * * * * *| 05
+        |* * * * * * * * * O * * * * * * * * *| 05
         |*|-----|*|-|*|---------|*|-|*|-----|*| 06
         |* * * * *|-|* * *| |* * *|-|*|*|*|*|*| 07
         |-------|*|-----|*| |*|-----|*|-------| 08
@@ -25,19 +25,17 @@ public interface PacManNavigator {
 
     /*
         Precondition(s):
-            A
+            direction           ==>     charAt(directionOfCurrentPosition) != edge
+            direction == N      ==>     tracker[previousMove] != S
+            direction == S      ==>     tracker[previousMove] != N
+            direction == E      ==>     tracker[previousMove] != W
+            direction == W      ==>     tracker[previousMove] != E
+            !noMorePelletsToGather()
+
         Postcondition(s):
             A
     */
-    public void move(Direction direction, int distance);
-
-    /*
-    Precondition(s):
-        A
-    Postcondition(s):
-        A
-    */
-    public int getPelletsEaten();
+    public void move(Direction direction);
 
     /*
         Precondition(s):
@@ -45,6 +43,29 @@ public interface PacManNavigator {
         Postcondition(s):
             A
     */
-    public int getPoints();
+    public int movesLeft();
+    /*
+        Precondition(s):
+            A
+        Postcondition(s):
+            A
+    */
+    public int maxPotentialPellets();
+
+    /*
+        Precondition(s):
+            A
+        Postcondition(s):
+            A
+    */
+    public boolean noMorePelletsToGather();
+
+    /*
+        Precondition(s):
+            A
+        Postcondition(s):
+            A
+    */
+    public int[] getEdges();
 }
 

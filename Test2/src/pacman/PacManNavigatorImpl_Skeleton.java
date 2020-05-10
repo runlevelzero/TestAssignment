@@ -1,39 +1,48 @@
 package pacman;
 
-public class PacManNavigatorImpl_Skeleton implements PacManNavigator {
-    private String board;
+public class PacManNavigatorImpl_Skeleton extends PacManMaze implements PacManNavigator {
+    public static final char NAVIGATOR = 'O';
     private Direction[] tracker;
-    private int points = 0;
+    private int pellets;
 
     public PacManNavigatorImpl_Skeleton(String board, int maxTurns) {
-        this.board = board;
+        super(board);
         tracker = new Direction[maxTurns];
+        pellets = 0;
     }
 
     @Override
-    public void move(Direction direction, int distance) {
-
+    public void move(Direction direction) {
+        throw new RuntimeException("NOT YET IMPLEMENTED!!");
     }
 
     @Override
-    public int getPelletsEaten() {
-        int count = 0;
-        int pelletsLeft = 0;
-        for (int i = 0; i < board.length(); i++) {
-            char ch_i = board.charAt(i);
-            if (ch_i == '*') {
-                pelletsLeft += 1;
-            }
-        }
-        return points;
+    public int movesLeft() {
+        throw new RuntimeException("NOT YET IMPLEMENTED!!");
     }
 
     @Override
-    public int getPoints() {
-        return points;
+    public int[] getEdges() {
+        throw new RuntimeException("NOT YET IMPLEMENTED!!");
+    }
+
+    @Override
+    public int getPelletsLeft() {
+        return super.getPelletsLeft();
+    }
+
+    @Override
+    public boolean noMorePelletsToGather() {
+        throw new RuntimeException("NOT YET IMPLEMENTED!!");
+    }
+
+    @Override
+    public int maxPotentialPellets() {
+        int pelletsLeft = getPelletsLeft();
+        throw new RuntimeException("NOT YET IMPLEMENTED!!");
     }
 
     public String toString() {
-        return board;
+        return super.toString();
     }
 }
