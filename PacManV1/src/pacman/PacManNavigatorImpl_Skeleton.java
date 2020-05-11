@@ -3,12 +3,14 @@ package pacman;
 public class PacManNavigatorImpl_Skeleton extends PacManMaze implements PacManNavigator {
     public static final char NAVIGATOR = 'O';
     private Direction[] tracker;
-    private int pellets;
+    private int points;
+    private int currentPosition;
 
     public PacManNavigatorImpl_Skeleton(String board, int maxTurns) {
         super(board);
+        currentPosition = startingPosition;
         tracker = new Direction[maxTurns];
-        pellets = 0;
+        points = 0;
     }
 
     @Override
@@ -28,12 +30,6 @@ public class PacManNavigatorImpl_Skeleton extends PacManMaze implements PacManNa
 
     @Override
     public boolean noMorePelletsToGather() {
-        throw new RuntimeException("NOT YET IMPLEMENTED!!");
-    }
-
-    @Override
-    public int maxPotentialPellets() {
-        int pelletsLeft = getPelletsLeft();
         throw new RuntimeException("NOT YET IMPLEMENTED!!");
     }
 
