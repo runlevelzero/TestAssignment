@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Chessv1/Chessv1.iml" filepath="$PROJECT_DIR$/Chessv1/Chessv1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Chessv2/Chessv2.iml" filepath="$PROJECT_DIR$/Chessv2/Chessv2.iml" />
       <module fileurl="file://$PROJECT_DIR$/PacManv1/PacManv1.iml" filepath="$PROJECT_DIR$/PacManv1/PacManv1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PacManv2/PacManv2.iml" filepath="$PROJECT_DIR$/PacManv2/PacManv2.iml" />
       <module fileurl="file://$PROJECT_DIR$/TestAssignment.iml" filepath="$PROJECT_DIR$/TestAssignment.iml" />
     </modules>
   </component>
