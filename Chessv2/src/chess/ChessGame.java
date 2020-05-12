@@ -1,5 +1,8 @@
 package chess;
 
+import chess.piece.Piece;
+import org.ietf.jgss.Oid;
+
 public interface ChessGame {
     public static final int ROW_COUNT = 8;
     public static final int COL_COUNT = 8;
@@ -65,7 +68,6 @@ public interface ChessGame {
                 A
      */
     public void movePiece(GridPosition start, GridPosition end);
-    //    public void movePiece(String start, String end);
 
     /*
             Precondition(s):

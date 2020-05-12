@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ChessV1/ChessV1.iml" filepath="$PROJECT_DIR$/ChessV1/ChessV1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/PacManV1/PacManV1.iml" filepath="$PROJECT_DIR$/PacManV1/PacManV1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Chessv1/Chessv1.iml" filepath="$PROJECT_DIR$/Chessv1/Chessv1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Chessv2/Chessv2.iml" filepath="$PROJECT_DIR$/Chessv2/Chessv2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PacManv1/PacManv1.iml" filepath="$PROJECT_DIR$/PacManv1/PacManv1.iml" />
       <module fileurl="file://$PROJECT_DIR$/TestAssignment.iml" filepath="$PROJECT_DIR$/TestAssignment.iml" />
     </modules>
   </component>
