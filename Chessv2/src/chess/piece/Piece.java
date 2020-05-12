@@ -22,4 +22,27 @@ public abstract class Piece {
     public Player getPlayer() {
         return player;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Piece)) {
+            return false;
+        }
+        Piece piece = (Piece) obj;
+        return piece.label.equals(this.label) && piece.player.equals(this.player);
+    }
+
+    @Override
+    public int hashCode() {
+        int hashCode = 256;
+        final int mul = 18;
+
+        hashCode = mul * hashCode + label.hashCode();
+        hashCode = mul * hashCode + player.hashCode();
+
+        return hashCode;
+    }
 }
