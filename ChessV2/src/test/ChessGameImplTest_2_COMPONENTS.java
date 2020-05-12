@@ -10,7 +10,7 @@ import org.junit.Test;
 import static chess.GridPosition.*;
 import static org.junit.Assert.*;
 
-public class ChessGameImplTest_2_BASIC extends ChessGameImplTest_1_ENVIRONMENT {
+public class ChessGameImplTest_2_COMPONENTS extends ChessGameImplTest_1_ENVIRONMENT {
     public final int ROW_COUNT = ChessGame.ROW_COUNT;
     public final int COL_COUNT = ChessGame.COLUMN_COUNT;
     public final Piece BLACK_PAWN = new Pawn(Player.BLACK), BLACK_ROOK = new Rook(Player.BLACK), BLACK_KNIGHT =
