@@ -8,7 +8,7 @@ import pacman.PacManNavigatorImpl_Skeleton;
 import static org.junit.Assert.*;
 
 
-public class PacManNavigatorImplTest_LEVEL1_EASY {
+public class PacManNavigatorImplTest_1_EASY {
     public final Direction N = Direction.N, E = Direction.E, S = Direction.S, W = Direction.W;
 
     protected char[][] buildMazeSimpleNoCherries() {
