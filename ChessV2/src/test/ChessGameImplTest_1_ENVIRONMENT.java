@@ -2,7 +2,7 @@ package test;
 
 import org.junit.Test;
 
-public class ChessGameImplTest_0_ENVIRONMENT {
+public class ChessGameImplTest_1_ENVIRONMENT {
     protected String TEST_GOAL_MESSAGE;
 
     @Points(value = 0)
