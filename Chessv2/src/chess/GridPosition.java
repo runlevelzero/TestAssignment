@@ -17,4 +17,12 @@ public enum GridPosition {
         row = position.charAt(1);
         column = position.charAt(0);
     }
+
+    public char getRow(GridPosition gp) {
+        return gp.row;
+    }
+
+    public char getColumn(GridPosition gp) {
+        return gp.column;
+    }
 }
