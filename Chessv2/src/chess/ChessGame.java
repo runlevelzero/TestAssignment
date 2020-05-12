@@ -67,7 +67,7 @@ public interface ChessGame {
             Postcondition(s):
                 A
      */
-    public void movePiece(GridPosition start, GridPosition end);
+    public void movePiece(Piece piece, GridPosition end);
 
     /*
             Precondition(s):
@@ -78,5 +78,6 @@ public interface ChessGame {
      */
     public boolean isValidMove(Piece piece, GridPosition end);
 
-//    public boolean isCheckmated();
+    public boolean isCheckmated();
+    public boolean isCheckmated(int n);
 }

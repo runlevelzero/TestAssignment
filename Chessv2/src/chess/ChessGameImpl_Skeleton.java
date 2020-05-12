@@ -3,11 +3,11 @@ package chess;
 import chess.piece.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ChessGameImpl_Skeleton implements ChessGame {
     private Piece[][] board;
+    private List<Move> moveHistory;
 
     public ChessGameImpl_Skeleton() {
         board = new Piece[8][8];
@@ -32,6 +32,7 @@ public class ChessGameImpl_Skeleton implements ChessGame {
                 new Knight("Knight", Player.WHITE), new Rook("Rook", Player.WHITE)
         };
 
+        moveHistory = new ArrayList<>();
     }
 
     @Override
@@ -40,12 +41,22 @@ public class ChessGameImpl_Skeleton implements ChessGame {
     }
 
     @Override
-    public void movePiece(GridPosition start, GridPosition end) {
+    public void movePiece(Piece piece, GridPosition end) {
         throw new RuntimeException("NOT IMPLEMENTED YET!!");
     }
 
     @Override
     public boolean isValidMove(Piece piece, GridPosition end) {
+        throw new RuntimeException("NOT IMPLEMENTED YET!!");
+    }
+
+    @Override
+    public boolean isCheckmated() {
+        return isCheckmated(1);
+    }
+
+    @Override
+    public boolean isCheckmated(int n) {
         throw new RuntimeException("NOT IMPLEMENTED YET!!");
     }
 
@@ -66,7 +77,7 @@ public class ChessGameImpl_Skeleton implements ChessGame {
             for (Piece p : row) {
                 sb.append(INNER_CELL_BUFFER);
                 if (p != null) {
-                    sb.append(p.getColour() == Player.BLACK ? "B_" : "W_");
+                    sb.append(p.getPlayer() == Player.BLACK ? "B_" : "W_");
                     sb.append(p.singleCharacterRepr());
                 } else {
                     sb.append(EMPTY_GRID_POSITION);
