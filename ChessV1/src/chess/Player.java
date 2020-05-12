@@ -2,9 +2,14 @@ package chess;
 
 public enum Player {
     BLACK("Black"), WHITE("White");
-    private String player;
+    private final String player;
 
-    private Player(final String player) {
+    Player(final String player) {
         this.player = player;
+    }
+
+    public static String translate(Player player) {
+        assert player != null;
+        return player.player;
     }
 }

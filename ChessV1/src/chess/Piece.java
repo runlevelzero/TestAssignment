@@ -3,7 +3,6 @@ package chess;
 import java.util.*;
 
 public enum Piece {
-    //    PAWN, ROOK, KNIGHT, BISHOP, QUEEN, KING;
     PAWN(null, null),
         BLACK_PAWN(PAWN, Player.BLACK),
         WHITE_PAWN(PAWN, Player.WHITE),
@@ -23,8 +22,8 @@ public enum Piece {
         BLACK_KING(KING,Player.BLACK),
         WHITE_KING(KING, Player.WHITE);
 
-    private Piece parent;
-    private Player player;
+    private final Piece parent;
+    private final Player player;
 
     Piece(Piece parent, Player player) {
         this.parent = parent;
@@ -274,6 +273,7 @@ public enum Piece {
                 validMoves.add(new ArrayList<>(Arrays.asList("+1", "+1")));
                 break;
         }
+
         return validMoves;
     }
 
