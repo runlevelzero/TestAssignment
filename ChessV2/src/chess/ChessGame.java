@@ -84,8 +84,5 @@ public interface ChessGame {
         Postcondition(s):
             A
     */
-
     public boolean isCheckmated();
-
-    public boolean isCheckmated(int n);
 }

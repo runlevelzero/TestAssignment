@@ -8,8 +8,7 @@ import java.util.List;
 public class ChessGameImpl_Skeleton implements ChessGame {
     private Piece[][] board;
     private List<Move_Skeleton> moveHistory;
-
-
+    
     private static final int BLACK_ROYAL_FAMILY_INDEX = 0;
     private static final int BLACK_PAWN_ROW_INDEX = 1;
     private static final int WHITE_PAWN_ROW_INDEX = 6;
@@ -54,28 +53,24 @@ public class ChessGameImpl_Skeleton implements ChessGame {
 
     @Override
     public boolean isCheckmated() {
-        return isCheckmated(1);
-    }
-
-    @Override
-    public boolean isCheckmated(int n) {
         throw new RuntimeException("NOT IMPLEMENTED YET!!");
     }
 
     private static final String INNER_CELL_BUFFER = " ";
     private static final String LABEL_EDGE_BUFFER = " ";
     private static final String EMPTY_GRID_POSITION = "   ";
-    private static final String WALL = "|";
+    private static final String VERTICAL_WALL = "|";
     private static final String ROW_SEPARATOR = "   ----- ----- ----- ----- ----- ----- ----- -----";
     private static final String COL_DESC = "     A     B     C     D     E     F     G     H";
 
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         int rowNo = 8;
         sb.append(COL_DESC).append('\n');
         for (Piece[] row : board) {
             sb.append(ROW_SEPARATOR).append('\n');
-            sb.append(rowNo).append(LABEL_EDGE_BUFFER).append(WALL);
+            sb.append(rowNo).append(LABEL_EDGE_BUFFER).append(VERTICAL_WALL);
             for (Piece p : row) {
                 sb.append(INNER_CELL_BUFFER);
                 if (p != null) {
@@ -84,7 +79,7 @@ public class ChessGameImpl_Skeleton implements ChessGame {
                 } else {
                     sb.append(EMPTY_GRID_POSITION);
                 }
-                sb.append(INNER_CELL_BUFFER).append(WALL);
+                sb.append(INNER_CELL_BUFFER).append(VERTICAL_WALL);
             }
             sb.append(LABEL_EDGE_BUFFER).append(rowNo).append('\n');
             rowNo -= 1;
