@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ChessGameImpl_Skeleton implements ChessGame {
     private Piece[][] board;
-    private List<Move> moveHistory;
+    private List<Move_Skeleton> moveHistory;
 
     public ChessGameImpl_Skeleton() {
         board = new Piece[8][8];
@@ -46,7 +46,7 @@ public class ChessGameImpl_Skeleton implements ChessGame {
     }
 
     @Override
-    public boolean isValidMove(Piece piece, GridPosition end) {
+    public void movePiece(Piece piece, char file, GridPosition end) {
         throw new RuntimeException("NOT IMPLEMENTED YET!!");
     }
 

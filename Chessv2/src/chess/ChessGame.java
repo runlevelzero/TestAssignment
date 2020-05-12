@@ -70,13 +70,21 @@ public interface ChessGame {
     public void movePiece(Piece piece, GridPosition end);
 
     /*
-            Precondition(s):
-                True
+           Precondition(s):
+               A
 
-            Postcondition(s):
-                A
-     */
-    public boolean isValidMove(Piece piece, GridPosition end);
+           Postcondition(s):
+               A
+    */
+    public void movePiece(Piece piece, char file, GridPosition end);
+
+    /*
+        Precondition(s):
+            A
+
+        Postcondition(s):
+            A
+    */
 
     public boolean isCheckmated();
     public boolean isCheckmated(int n);
