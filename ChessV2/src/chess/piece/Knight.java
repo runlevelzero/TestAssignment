@@ -1,5 +1,6 @@
 package chess.piece;
 
+import chess.GridPosition;
 import chess.Player;
 
 public class Knight extends Piece {
@@ -8,7 +9,7 @@ public class Knight extends Piece {
     }
 
     @Override
-    public int[][] getPotentialMoveDeltas(Piece p) {
+    public int[][] getPotentialMoveDeltas(Piece p, GridPosition currentPosition) {
         throw new RuntimeException("NOW IMPLEMENTED YET");
     }
 }

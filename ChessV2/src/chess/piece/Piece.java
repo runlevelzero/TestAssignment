@@ -1,5 +1,6 @@
 package chess.piece;
 
+import chess.GridPosition;
 import chess.Player;
 
 import java.util.HashMap;
@@ -32,8 +33,7 @@ public abstract class Piece {
         this.singleCharacterRepr = singleCharacterRepr;
     }
 
-    public abstract int[][] getPotentialMoveDeltas(Piece p);
-
+    public abstract int[][] getPotentialMoveDeltas(Piece p, GridPosition currentPosition);
 
     public String getLabel() {
         return label;

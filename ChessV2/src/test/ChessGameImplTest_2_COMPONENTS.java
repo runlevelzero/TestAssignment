@@ -41,16 +41,19 @@ public class ChessGameImplTest_2_COMPONENTS extends ChessGameImplTest_1_ENVIRONM
         return new ChessGameImpl_Skeleton();
     }
 
+    @Points(value = 0)
     @Test
     public void test_toString() {
+        TEST_GOAL_MESSAGE = "Pretty toString()";
         ChessGame game = getChessGame();
         prettyBoard(game);
     }
 
     @Test
     public void test_getPiece_justInstantiation() {
-        ChessGame game = getChessGame();
+        TEST_GOAL_MESSAGE = "Get all pieces of a freshly instantiated board";
 
+        ChessGame game = getChessGame();
         for (int rank = ROW_COUNT; rank > 0; rank--) {
             for (int col = 0; col < COL_COUNT; col++) {
                 StringBuilder sb = new StringBuilder();
