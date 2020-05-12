@@ -56,7 +56,6 @@ public interface ChessGame {
                 A
      */
     public Piece getPiece(GridPosition position);
-    //    public Piece getPiece(String position);
 
     /*
             Precondition(s):
@@ -69,13 +68,13 @@ public interface ChessGame {
     //    public void movePiece(String start, String end);
 
     /*
-         Precondition(s):
-             A
+            Precondition(s):
+                True
 
-         Postcondition(s):
-             A
+            Postcondition(s):
+                A
      */
-    public int killCount();
+    public boolean isValidMove(Piece piece, GridPosition end);
 
-    public int killCount(Player p);
+//    public boolean isCheckmated();
 }

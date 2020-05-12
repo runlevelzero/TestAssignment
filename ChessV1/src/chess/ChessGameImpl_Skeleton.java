@@ -4,7 +4,6 @@ import java.util.*;
 
 public class ChessGameImpl_Skeleton implements ChessGame {
     private List<List<Piece>> board;
-    private List<Piece> graveyard;
 
     private static final int MAX_NO_PIECES = 32;
 
@@ -31,7 +30,6 @@ public class ChessGameImpl_Skeleton implements ChessGame {
                 Arrays.asList(Piece.WHITE_ROOK, Piece.WHITE_KNIGHT, Piece.WHITE_BISHOP, Piece.WHITE_KING,
                         Piece.WHITE_QUEEN, Piece.WHITE_BISHOP, Piece.WHITE_KNIGHT, Piece.WHITE_ROOK)));
 
-        graveyard = new ArrayList<>(MAX_NO_PIECES);
     }
 
     static Map<Character, Integer> ROW_POSITION_TRANSLATOR = new HashMap<>();
@@ -77,7 +75,7 @@ public class ChessGameImpl_Skeleton implements ChessGame {
     @Override
     public void movePiece(GridPosition start, GridPosition end) {
         assert getPiece(start) != null;
-        assert isValidMove(start, end);
+//        assert isValidMove(start, end);
 
         int startRow = ROW_POSITION_TRANSLATOR.get(start.row);
         int startCol = COL_POSITION_TRANSLATOR.get(start.column);
@@ -90,25 +88,14 @@ public class ChessGameImpl_Skeleton implements ChessGame {
         boolean endIsEmpty = killedPiece == NO_PIECE;
 
         if (!endIsEmpty) {
-            graveyard.add(killedPiece);
             board.get(endRow).set(endCol, movingPiece);
             board.get(startRow).set(startCol, EMPTY_POSITION);
         }
     }
 
-    private boolean isValidMove(GridPosition start, GridPosition end) {
-
+    @Override
+    public boolean isValidMove(Piece piece, GridPosition end) {
         return true;
-    }
-
-    @Override
-    public int killCount() {
-        return graveyard.size();
-    }
-
-    @Override
-    public int killCount(Player p) {
-        return (int) graveyard.stream().filter(piece -> piece.player == p).count();
     }
 
     private static final String ROW_SEPARATOR = "|-----|-----|-----|-----|-----|-----|-----|-----|";

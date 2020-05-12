@@ -31,7 +31,6 @@ public enum Piece {
         this.player = player;
     }
 
-
     public static Set<List<String>> moveSet(Piece p) {
         Set<List<String>> validMoves = new HashSet<>();
         switch (p) {
