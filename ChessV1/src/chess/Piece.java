@@ -23,8 +23,8 @@ public enum Piece {
         BLACK_KING(KING,Player.BLACK),
         WHITE_KING(KING, Player.WHITE);
 
-    protected Piece parent;
-    protected Player player;
+    private Piece parent;
+    private Player player;
 
     Piece(Piece parent, Player player) {
         this.parent = parent;

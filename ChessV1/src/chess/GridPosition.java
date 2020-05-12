@@ -10,8 +10,8 @@ public enum GridPosition {
     G1("G1"), G2("G2"), G3("G3"), G4("G4"), G5("G5"), G6("G6"), G7("G7"), G8("G8"),
     H1("H1"), H2("H2"), H3("H3"), H4("H4"), H5("H5"), H6("H6"), H7("H7"), H8("H8");
 
-    protected char row;
-    protected char column;
+    private char row;
+    private char column;
 
     GridPosition(final String position) {
         row = position.charAt(1);

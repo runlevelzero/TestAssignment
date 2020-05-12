@@ -60,42 +60,17 @@ public class ChessGameImpl_Skeleton implements ChessGame {
 
     @Override
     public Piece getPiece(GridPosition position) {
-        assert ROW_POSITION_TRANSLATOR.containsKey(position.row);
-        assert COL_POSITION_TRANSLATOR.containsKey(position.column);
-
-        int row = ROW_POSITION_TRANSLATOR.get(position.row);
-        int col = COL_POSITION_TRANSLATOR.get(position.column);
-
-        return board.get(row).get(col);
+        throw new RuntimeException("NOT IMPLEMENTED YET!!");
     }
-
-    private static final Piece EMPTY_POSITION = null;
-    private static final Piece NO_PIECE = null;
 
     @Override
     public void movePiece(GridPosition start, GridPosition end) {
-        assert getPiece(start) != null;
-//        assert isValidMove(start, end);
-
-        int startRow = ROW_POSITION_TRANSLATOR.get(start.row);
-        int startCol = COL_POSITION_TRANSLATOR.get(start.column);
-
-        int endRow = ROW_POSITION_TRANSLATOR.get(end.row);
-        int endCol = COL_POSITION_TRANSLATOR.get(end.column);
-
-        Piece movingPiece = getPiece(start);
-        Piece killedPiece = getPiece(end);
-        boolean endIsEmpty = killedPiece == NO_PIECE;
-
-        if (!endIsEmpty) {
-            board.get(endRow).set(endCol, movingPiece);
-            board.get(startRow).set(startCol, EMPTY_POSITION);
-        }
+        throw new RuntimeException("NOT IMPLEMENTED YET!!");
     }
 
     @Override
     public boolean isValidMove(Piece piece, GridPosition end) {
-        return true;
+        throw new RuntimeException("NOT IMPLEMENTED YET!!");
     }
 
     private static final String ROW_SEPARATOR = "|-----|-----|-----|-----|-----|-----|-----|-----|";
