@@ -33,7 +33,7 @@ public abstract class Piece {
         this.singleCharacterRepr = singleCharacterRepr;
     }
 
-    public abstract int[][] getPotentialMoveDeltas(Piece p, GridPosition currentPosition);
+    public abstract int[][] getPotentialMoveDeltas(Piece p, GridPosition current);
 
     public String getLabel() {
         return label;

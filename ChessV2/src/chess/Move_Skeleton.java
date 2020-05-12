@@ -4,15 +4,15 @@ import chess.piece.Piece;
 
 public class Move_Skeleton {
     private final Piece piece;
-    private final GridPosition start;
+    private final GridPosition current;
     private final GridPosition end;
 
-    public Move_Skeleton(Piece piece, GridPosition end) {
+    public Move_Skeleton(Piece piece, GridPosition current, GridPosition end) {
         assert isAmbiguousMove(piece, end);
         assert isValidMove(piece, end);
 
         this.piece = piece;
-        start = null; // Find where the piece initially is before the move! May not include this concept at all
+        this.current = current;
         this.end = end;
     }
 
@@ -24,7 +24,7 @@ public class Move_Skeleton {
         throw new RuntimeException("NOT IMPLEMENTED YET!!");
     }
 
-    public int[] getDeltas() {
+    public int[] getYXDelta() {
         throw new RuntimeException("NOT IMPLEMENTED YET!!");
     }
 
@@ -32,8 +32,8 @@ public class Move_Skeleton {
         return piece;
     }
 
-    public GridPosition getStart() {
-        return start;
+    public GridPosition getCurrent() {
+        return current;
     }
 
     public GridPosition getEnd() {

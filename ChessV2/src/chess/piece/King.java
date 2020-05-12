@@ -9,7 +9,7 @@ public class King extends Piece {
     }
 
     @Override
-    public int[][] getPotentialMoveDeltas(Piece p, GridPosition currentPosition) {
+    public int[][] getPotentialMoveDeltas(Piece p, GridPosition current) {
         throw new RuntimeException("NOW IMPLEMENTED YET");
     }
 
