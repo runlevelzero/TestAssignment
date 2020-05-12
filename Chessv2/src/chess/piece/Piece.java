@@ -2,8 +2,6 @@ package chess.piece;
 
 import chess.Player;
 
-import java.util.List;
-
 public abstract class Piece {
     private final String label;
     private final Player player;
@@ -13,7 +11,7 @@ public abstract class Piece {
         this.player = player;
     }
 
-    public abstract List<List<String>> getMoves(Piece p);
+    public abstract int[][] getPotentialMoveDeltas(Piece p);
 
     public abstract char singleCharacterRepr();
 
@@ -21,7 +19,7 @@ public abstract class Piece {
         return label;
     }
 
-    public Player getColour() {
+    public Player getPlayer() {
         return player;
     }
 }
