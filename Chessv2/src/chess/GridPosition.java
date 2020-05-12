@@ -69,92 +69,101 @@ public enum GridPosition {
     H7("H7"),
     H8("H8");
 
-    private final char file;
-    private final char rank;
+    private final String position;
 
     GridPosition(final String position) {
-        file = position.charAt(0);
-        rank = position.charAt(1);
+        this.position = position;
     }
 
-    static Map<String, GridPosition> gridPositionStrToEnum = new HashMap<>();
+    static Map<String, GridPosition> translate = new HashMap<>();
 
     static {
-        gridPositionStrToEnum.put("A1", A1);
-        gridPositionStrToEnum.put("A2", A2);
-        gridPositionStrToEnum.put("A3", A3);
-        gridPositionStrToEnum.put("A4", A4);
-        gridPositionStrToEnum.put("A5", A5);
-        gridPositionStrToEnum.put("A6", A6);
-        gridPositionStrToEnum.put("A7", A7);
-        gridPositionStrToEnum.put("A8", A8);
-        gridPositionStrToEnum.put("B1", B1);
-        gridPositionStrToEnum.put("B2", B2);
-        gridPositionStrToEnum.put("B3", B3);
-        gridPositionStrToEnum.put("B4", B4);
-        gridPositionStrToEnum.put("B5", B5);
-        gridPositionStrToEnum.put("B6", B6);
-        gridPositionStrToEnum.put("B7", B7);
-        gridPositionStrToEnum.put("B8", B8);
-        gridPositionStrToEnum.put("C1", C1);
-        gridPositionStrToEnum.put("C2", C2);
-        gridPositionStrToEnum.put("C3", C3);
-        gridPositionStrToEnum.put("C4", C4);
-        gridPositionStrToEnum.put("C5", C5);
-        gridPositionStrToEnum.put("C6", C6);
-        gridPositionStrToEnum.put("C7", C7);
-        gridPositionStrToEnum.put("C8", C8);
-        gridPositionStrToEnum.put("D1", D1);
-        gridPositionStrToEnum.put("D2", D2);
-        gridPositionStrToEnum.put("D3", D3);
-        gridPositionStrToEnum.put("D4", D4);
-        gridPositionStrToEnum.put("D5", D5);
-        gridPositionStrToEnum.put("D6", D6);
-        gridPositionStrToEnum.put("D7", D7);
-        gridPositionStrToEnum.put("D8", D8);
-        gridPositionStrToEnum.put("E1", E1);
-        gridPositionStrToEnum.put("E2", E2);
-        gridPositionStrToEnum.put("E3", E3);
-        gridPositionStrToEnum.put("E4", E4);
-        gridPositionStrToEnum.put("E5", E5);
-        gridPositionStrToEnum.put("E6", E6);
-        gridPositionStrToEnum.put("E7", E7);
-        gridPositionStrToEnum.put("E8", E8);
-        gridPositionStrToEnum.put("F1", F1);
-        gridPositionStrToEnum.put("F2", F2);
-        gridPositionStrToEnum.put("F3", F3);
-        gridPositionStrToEnum.put("F4", F4);
-        gridPositionStrToEnum.put("F5", F5);
-        gridPositionStrToEnum.put("F6", F6);
-        gridPositionStrToEnum.put("F7", F7);
-        gridPositionStrToEnum.put("F8", F8);
-        gridPositionStrToEnum.put("G1", G1);
-        gridPositionStrToEnum.put("G2", G2);
-        gridPositionStrToEnum.put("G3", G3);
-        gridPositionStrToEnum.put("G4", G4);
-        gridPositionStrToEnum.put("G5", G5);
-        gridPositionStrToEnum.put("G6", G6);
-        gridPositionStrToEnum.put("G7", G7);
-        gridPositionStrToEnum.put("G8", G8);
-        gridPositionStrToEnum.put("H1", H1);
-        gridPositionStrToEnum.put("H2", H2);
-        gridPositionStrToEnum.put("H3", H3);
-        gridPositionStrToEnum.put("H4", H4);
-        gridPositionStrToEnum.put("H5", H5);
-        gridPositionStrToEnum.put("H6", H6);
-        gridPositionStrToEnum.put("H7", H7);
-        gridPositionStrToEnum.put("H8", H8);
+        translate.put("A1", A1);
+        translate.put("A2", A2);
+        translate.put("A3", A3);
+        translate.put("A4", A4);
+        translate.put("A5", A5);
+        translate.put("A6", A6);
+        translate.put("A7", A7);
+        translate.put("A8", A8);
+        translate.put("B1", B1);
+        translate.put("B2", B2);
+        translate.put("B3", B3);
+        translate.put("B4", B4);
+        translate.put("B5", B5);
+        translate.put("B6", B6);
+        translate.put("B7", B7);
+        translate.put("B8", B8);
+        translate.put("C1", C1);
+        translate.put("C2", C2);
+        translate.put("C3", C3);
+        translate.put("C4", C4);
+        translate.put("C5", C5);
+        translate.put("C6", C6);
+        translate.put("C7", C7);
+        translate.put("C8", C8);
+        translate.put("D1", D1);
+        translate.put("D2", D2);
+        translate.put("D3", D3);
+        translate.put("D4", D4);
+        translate.put("D5", D5);
+        translate.put("D6", D6);
+        translate.put("D7", D7);
+        translate.put("D8", D8);
+        translate.put("E1", E1);
+        translate.put("E2", E2);
+        translate.put("E3", E3);
+        translate.put("E4", E4);
+        translate.put("E5", E5);
+        translate.put("E6", E6);
+        translate.put("E7", E7);
+        translate.put("E8", E8);
+        translate.put("F1", F1);
+        translate.put("F2", F2);
+        translate.put("F3", F3);
+        translate.put("F4", F4);
+        translate.put("F5", F5);
+        translate.put("F6", F6);
+        translate.put("F7", F7);
+        translate.put("F8", F8);
+        translate.put("G1", G1);
+        translate.put("G2", G2);
+        translate.put("G3", G3);
+        translate.put("G4", G4);
+        translate.put("G5", G5);
+        translate.put("G6", G6);
+        translate.put("G7", G7);
+        translate.put("G8", G8);
+        translate.put("H1", H1);
+        translate.put("H2", H2);
+        translate.put("H3", H3);
+        translate.put("H4", H4);
+        translate.put("H5", H5);
+        translate.put("H6", H6);
+        translate.put("H7", H7);
+        translate.put("H8", H8);
     }
 
     public static GridPosition translate(String str) {
-        return gridPositionStrToEnum.get(str);
+        assert str != null;
+        return translate.get(str.toUpperCase());
+    }
+
+    public static String translate(GridPosition gp) {
+        assert gp != null;
+        return gp.position;
+    }
+
+    private static final int FILE_INDEX = 0;
+    private static final int RANK_INDEX = 1;
+
+    public static char getFile(GridPosition gp) {
+        assert gp != null;
+        return gp.position.charAt(FILE_INDEX);
     }
 
     public static char getRank(GridPosition gp) {
-        return gp.rank;
-    }
-
-    public static char getFile(GridPosition gp) {
-        return gp.file;
+        assert gp != null;
+        return gp.position.charAt(RANK_INDEX);
     }
 }

@@ -8,8 +8,14 @@ public enum Player {
         this.player = player;
     }
 
-    public static String translate(Player player) {
-        assert player != null;
-        return player.player;
+    public static Player translate(String str) {
+        assert str != null;
+        return str.toLowerCase().equals("black") ? BLACK : WHITE;
     }
+
+    public static String translate(Player p) {
+        assert p != null;
+        return p.player;
+    }
+
 }
