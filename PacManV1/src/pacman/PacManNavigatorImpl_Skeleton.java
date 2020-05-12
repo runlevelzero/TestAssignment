@@ -4,11 +4,9 @@ public class PacManNavigatorImpl_Skeleton extends PacManMaze implements PacManNa
     public static final char NAVIGATOR = 'O';
     private Direction[] tracker;
     private int points;
-    private int currentPosition;
 
-    public PacManNavigatorImpl_Skeleton(String board, int maxTurns) {
+    public PacManNavigatorImpl_Skeleton(char[][] board, int maxTurns) {
         super(board);
-        currentPosition = startingPosition;
         tracker = new Direction[maxTurns];
         points = 0;
     }
@@ -20,11 +18,6 @@ public class PacManNavigatorImpl_Skeleton extends PacManMaze implements PacManNa
 
     @Override
     public int movesLeft() {
-        throw new RuntimeException("NOT YET IMPLEMENTED!!");
-    }
-
-    @Override
-    public int[] getEdges() {
         throw new RuntimeException("NOT YET IMPLEMENTED!!");
     }
 

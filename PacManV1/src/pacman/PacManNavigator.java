@@ -21,7 +21,7 @@ public interface PacManNavigator {
         Postcondition(s):
             A
     */
-    public int[] getEdges();
+    public int movesLeft();
 
     /*
         Precondition(s):
@@ -29,7 +29,7 @@ public interface PacManNavigator {
         Postcondition(s):
             A
     */
-    public int movesLeft();
+//    public int[][] getLegalMoves();
 
     /*
         Precondition(s):
