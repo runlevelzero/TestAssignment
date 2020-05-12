@@ -1,11 +1,10 @@
 package chess;
 
 import chess.piece.Piece;
-import org.ietf.jgss.Oid;
 
 public interface ChessGame {
-    public static final int ROW_COUNT = 8;
-    public static final int COL_COUNT = 8;
+    public final int ROW_COUNT = 8;
+    public final int COLUMN_COUNT = 8;
     /*  Actual Board Grid
             A     B     C     D     E     F     G     H
          |-----|-----|-----|-----|-----|-----|-----|-----|
@@ -87,5 +86,6 @@ public interface ChessGame {
     */
 
     public boolean isCheckmated();
+
     public boolean isCheckmated(int n);
 }

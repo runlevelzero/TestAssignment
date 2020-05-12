@@ -9,27 +9,29 @@ public class ChessGameImpl_Skeleton implements ChessGame {
     private Piece[][] board;
     private List<Move_Skeleton> moveHistory;
 
+
+    private static final int BLACK_ROYAL_FAMILY_INDEX = 0;
+    private static final int BLACK_PAWN_ROW_INDEX = 1;
+    private static final int WHITE_PAWN_ROW_INDEX = 6;
+    private static final int WHITE_ROYAL_FAMILY_INDEX = 7;
+
     public ChessGameImpl_Skeleton() {
-        board = new Piece[8][8];
-        board[0] = new Piece[]{
-                new Rook("Rook", Player.BLACK), new Knight("Knight", Player.BLACK), new Bishop("Bishop", Player.BLACK),
-                new King("King", Player.BLACK), new Queen("Queen", Player.BLACK), new Bishop("Bishop", Player.BLACK),
-                new Knight("Knight", Player.BLACK), new Rook("Rook", Player.BLACK)
+        board = new Piece[ROW_COUNT][COLUMN_COUNT];
+        board[BLACK_ROYAL_FAMILY_INDEX] = new Piece[]{
+                new Rook(Player.BLACK), new Knight(Player.BLACK), new Bishop(Player.BLACK), new King(Player.BLACK),
+                new Queen(Player.BLACK), new Bishop(Player.BLACK), new Knight(Player.BLACK), new Rook(Player.BLACK)
         };
-        board[1] = new Piece[]{
-                new Pawn("Pawn", Player.BLACK), new Pawn("Pawn", Player.BLACK), new Pawn("Pawn", Player.BLACK),
-                new Pawn("Pawn", Player.BLACK), new Pawn("Pawn", Player.BLACK), new Pawn("Pawn", Player.BLACK),
-                new Pawn("Pawn", Player.BLACK), new Pawn("Pawn", Player.BLACK)
+        board[BLACK_PAWN_ROW_INDEX] = new Piece[]{
+                new Pawn(Player.BLACK), new Pawn(Player.BLACK), new Pawn(Player.BLACK), new Pawn(Player.BLACK),
+                new Pawn(Player.BLACK), new Pawn(Player.BLACK), new Pawn(Player.BLACK), new Pawn(Player.BLACK)
         };
-        board[6] = new Piece[]{
-                new Pawn("Pawn", Player.WHITE), new Pawn("Pawn", Player.WHITE), new Pawn("Pawn", Player.WHITE),
-                new Pawn("Pawn", Player.WHITE), new Pawn("Pawn", Player.WHITE), new Pawn("Pawn", Player.WHITE),
-                new Pawn("Pawn", Player.WHITE), new Pawn("Pawn", Player.WHITE)
+        board[WHITE_PAWN_ROW_INDEX] = new Piece[]{
+                new Pawn(Player.WHITE), new Pawn(Player.WHITE), new Pawn(Player.WHITE), new Pawn(Player.WHITE),
+                new Pawn(Player.WHITE), new Pawn(Player.WHITE), new Pawn(Player.WHITE), new Pawn(Player.WHITE)
         };
-        board[7] = new Piece[]{
-                new Rook("Rook", Player.WHITE), new Knight("Knight", Player.WHITE), new Bishop("Bishop", Player.WHITE),
-                new King("King", Player.WHITE), new Queen("Queen", Player.WHITE), new Bishop("Bishop", Player.WHITE),
-                new Knight("Knight", Player.WHITE), new Rook("Rook", Player.WHITE)
+        board[WHITE_ROYAL_FAMILY_INDEX] = new Piece[]{
+                new Rook(Player.WHITE), new Knight(Player.WHITE), new Bishop(Player.WHITE), new King(Player.WHITE),
+                new Queen(Player.WHITE), new Bishop(Player.WHITE), new Knight(Player.WHITE), new Rook(Player.WHITE)
         };
 
         moveHistory = new ArrayList<>();
@@ -78,7 +80,7 @@ public class ChessGameImpl_Skeleton implements ChessGame {
                 sb.append(INNER_CELL_BUFFER);
                 if (p != null) {
                     sb.append(p.getPlayer() == Player.BLACK ? "B_" : "W_");
-                    sb.append(p.singleCharacterRepr());
+                    sb.append(p.getSngleCharacterRepr());
                 } else {
                     sb.append(EMPTY_GRID_POSITION);
                 }
