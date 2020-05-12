@@ -4,10 +4,12 @@ import chess.GridPosition;
 import chess.Player;
 
 public class Bishop extends Piece {
-    private final int point = 3;
+    private static final String BISHOP_STRING_REPR = "BISHOP";
+    private static final int BISHOP_POINT_VALUE = 3;
+    private static final char BISHOP_SINGLE_CHAR_REPR = 'B';
 
     public Bishop(Player player) {
-        super("Bishop", player, 3, 'B');
+        super(BISHOP_STRING_REPR, player, BISHOP_POINT_VALUE, BISHOP_SINGLE_CHAR_REPR);
     }
 
     @Override

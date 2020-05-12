@@ -15,22 +15,24 @@ public abstract class Piece {
     private static final Map<String, Integer> labelToPoint = new HashMap<>();
 
     static {
-        labelToPoint.put("pawn", 1);
-        labelToPoint.put("rook", 5);
-        labelToPoint.put("knight", 3);
-        labelToPoint.put("bishop", 3);
-        labelToPoint.put("queen", 9);
-        labelToPoint.put("king", 0);
+        labelToPoint.put("PAWN", 1);
+        labelToPoint.put("ROOK", 5);
+        labelToPoint.put("KNIGHT", 3);
+        labelToPoint.put("BISHOP", 3);
+        labelToPoint.put("QUEEN", 9);
+        labelToPoint.put("KING", 0);
     }
 
     public Piece(final String label, final Player player, final int pointValue, final char singleCharacterRepr) {
-        assert labelToPoint.containsKey(label.toLowerCase());
-        assert labelToPoint.get(label.toLowerCase()) == pointValue;
+        assert labelToPoint.containsKey(label.toUpperCase());
+        assert labelToPoint.get(label.toUpperCase()) == pointValue;
+        assert (label.toUpperCase().charAt(0) == Character.toUpperCase(singleCharacterRepr)) ||
+               (label.toUpperCase().equals("KNIGHT") && ('N' == Character.toUpperCase(singleCharacterRepr)));
 
         this.player = player;
         this.pointValue = pointValue;
-        this.label = label;
-        this.singleCharacterRepr = singleCharacterRepr;
+        this.label = label.toUpperCase();
+        this.singleCharacterRepr = Character.toUpperCase(singleCharacterRepr);
     }
 
     public abstract int[][] getPotentialMoveDeltas(Piece p, GridPosition current);
