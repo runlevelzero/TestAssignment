@@ -10,7 +10,8 @@ import java.lang.reflect.InvocationTargetException;
 /**
  @author Jeffrey Ng
  @created 2020-05-13 */
-public class PieceTest {
+public class BlackPiece extends PieceTest_6_WhitePawn {
+    @Override
     protected Piece getPieceFromTestName(String testName) throws ClassNotFoundException, NoSuchMethodException,
             IllegalAccessException, InvocationTargetException, InstantiationException {
         String classNameAux = testName.substring(0, testName.length() - 2);
@@ -20,9 +21,10 @@ public class PieceTest {
         String className = sb.append(title).append(restOfTheClassName).toString();
         Class<?> clazz = Class.forName(String.format("chess.piece.%s", className));
         Constructor<?> constructor = clazz.getConstructor(Player.class);
-        return (Piece) constructor.newInstance(Player.WHITE);
+        return (Piece) constructor.newInstance(Player.BLACK);
     }
 
+    @Override
     protected GridPosition extractGridPositionFromTestName(String testName) {
         return GridPosition.translate(testName.substring(testName.length() - 2));
     }
