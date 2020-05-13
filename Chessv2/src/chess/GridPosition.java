@@ -69,14 +69,10 @@ public enum GridPosition {
     H7("H7"),
     H8("H8");
 
-    private final String position;
-
-    GridPosition(final String position) {
-        this.position = position;
-    }
+    private static final int FILE_INDEX = 0;
+    private static final int RANK_INDEX = 1;
 
     static Map<String, GridPosition> translate = new HashMap<>();
-
     static {
         translate.put("A1", A1);
         translate.put("A2", A2);
@@ -143,6 +139,11 @@ public enum GridPosition {
         translate.put("H7", H7);
         translate.put("H8", H8);
     }
+    private final String position;
+
+    GridPosition(final String position) {
+        this.position = position;
+    }
 
     public static GridPosition translate(String str) {
         assert str != null;
@@ -153,9 +154,6 @@ public enum GridPosition {
         assert gp != null;
         return gp.position;
     }
-
-    private static final int FILE_INDEX = 0;
-    private static final int RANK_INDEX = 1;
 
     public static char getFile(GridPosition gp) {
         assert gp != null;
