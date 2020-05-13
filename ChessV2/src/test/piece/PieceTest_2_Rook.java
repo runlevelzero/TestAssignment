@@ -11,7 +11,7 @@ import static org.junit.Assert.assertArrayEquals;
 /**
  @author Jeffrey Ng
  @created 2020-05-13 */
-public class RookTest extends PieceTest {
+public class PieceTest_2_Rook extends PieceTest_1_King {
     @Test
     public void rookA8() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
             InstantiationException, IllegalAccessException {
@@ -20,7 +20,16 @@ public class RookTest extends PieceTest {
         Piece p = getPieceFromTestName(testName);
 
         int[][] actual = p.getEndpointListFromCurrentPosition(gp);
-        int[][] expected = new int[][] {};
+        int[][] expected = new int[][] {
+                new int[] {0, 1, 1, 1, 1, 1, 1, 1,},
+                new int[] {1, 0, 0, 0, 0, 0, 0, 0,},
+                new int[] {1, 0, 0, 0, 0, 0, 0, 0,},
+                new int[] {1, 0, 0, 0, 0, 0, 0, 0,},
+                new int[] {1, 0, 0, 0, 0, 0, 0, 0,},
+                new int[] {1, 0, 0, 0, 0, 0, 0, 0,},
+                new int[] {1, 0, 0, 0, 0, 0, 0, 0,},
+                new int[] {1, 0, 0, 0, 0, 0, 0, 0,},
+                };
 
         assertArrayEquals(expected, actual);
     }
@@ -33,46 +42,38 @@ public class RookTest extends PieceTest {
         Piece p = getPieceFromTestName(testName);
 
         int[][] actual = p.getEndpointListFromCurrentPosition(gp);
-        int[][] expected = new int[][] {};
+        int[][] expected = new int[][] {
+                new int[] {1, 0, 0, 0, 0, 0, 0, 0,},
+                new int[] {1, 0, 0, 0, 0, 0, 0, 0,},
+                new int[] {1, 0, 0, 0, 0, 0, 0, 0,},
+                new int[] {0, 1, 1, 1, 1, 1, 1, 1,},
+                new int[] {1, 0, 0, 0, 0, 0, 0, 0,},
+                new int[] {1, 0, 0, 0, 0, 0, 0, 0,},
+                new int[] {1, 0, 0, 0, 0, 0, 0, 0,},
+                new int[] {1, 0, 0, 0, 0, 0, 0, 0,},
+                };
 
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void rookH1() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
+    public void rookC3() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
             InstantiationException, IllegalAccessException {
         String testName = Thread.currentThread().getStackTrace()[1].getMethodName();
         GridPosition gp = extractGridPositionFromTestName(testName);
         Piece p = getPieceFromTestName(testName);
 
         int[][] actual = p.getEndpointListFromCurrentPosition(gp);
-        int[][] expected = new int[][] {};
-
-        assertArrayEquals(expected, actual);
-    }
-
-    @Test
-    public void rookA1() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
-            InstantiationException, IllegalAccessException {
-        String testName = Thread.currentThread().getStackTrace()[1].getMethodName();
-        GridPosition gp = extractGridPositionFromTestName(testName);
-        Piece p = getPieceFromTestName(testName);
-
-        int[][] actual = p.getEndpointListFromCurrentPosition(gp);
-        int[][] expected = new int[][] {};
-
-        assertArrayEquals(expected, actual);
-    }
-
-    @Test
-    public void rookH8() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
-            InstantiationException, IllegalAccessException {
-        String testName = Thread.currentThread().getStackTrace()[1].getMethodName();
-        GridPosition gp = extractGridPositionFromTestName(testName);
-        Piece p = getPieceFromTestName(testName);
-
-        int[][] actual = p.getEndpointListFromCurrentPosition(gp);
-        int[][] expected = new int[][] {};
+        int[][] expected = new int[][] {
+                new int[] {0, 0, 1, 0, 0, 0, 0, 0,},
+                new int[] {0, 0, 1, 0, 0, 0, 0, 0,},
+                new int[] {0, 0, 1, 0, 0, 0, 0, 0,},
+                new int[] {0, 0, 1, 0, 0, 0, 0, 0,},
+                new int[] {0, 0, 1, 0, 0, 0, 0, 0,},
+                new int[] {1, 1, 0, 1, 1, 1, 1, 1,},
+                new int[] {0, 0, 1, 0, 0, 0, 0, 0,},
+                new int[] {0, 0, 1, 0, 0, 0, 0, 0,},
+                };
 
         assertArrayEquals(expected, actual);
     }

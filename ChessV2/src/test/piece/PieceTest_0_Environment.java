@@ -1,12 +1,12 @@
-package test.chessgame;
+package test.piece;
 
 import org.junit.Test;
 import test.Points;
 
 /**
  @author Jeffrey Ng
- @created 2020-05-12 */
-public class ChessGameImplTest_1_ENVIRONMENT {
+ @created 2020-05-13 */
+public class PieceTest_0_Environment {
     protected String TEST_GOAL_MESSAGE;
 
     @Points(value = 0)

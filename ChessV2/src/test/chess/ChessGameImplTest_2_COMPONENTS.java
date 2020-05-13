@@ -1,4 +1,4 @@
-package test.chessgame;
+package test.chess;
 
 import chess.GridPosition;
 import chess.Player;

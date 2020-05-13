@@ -1,9 +1,8 @@
 package chess.piece;
 
-import chess.GridPosition;
-import chess.Move_Skeleton;
-import chess.Player;
-import chess.Label;
+import chess.*;
+import chess.piece.utils.PieceUtils_Ng;
+import chess.utils.ChessGameUtils_Ng;
 
 /**
  @author Jeffrey Ng
@@ -23,6 +22,24 @@ public class Rook extends Piece {
 
     @Override
     public int[][] getEndpointListFromCurrentPosition(GridPosition current) {
-        throw new RuntimeException("NOW IMPLEMENTED YET");
+        int[][] endPoints = new int[ChessGame.ROW_COUNT][ChessGame.COLUMN_COUNT];
+        int[] curYX = ChessGameUtils_Ng.convertGridPositionTo2DYXArray(current);
+        int y = curYX[ChessGameUtils_Ng.Y_INDEX], x = curYX[ChessGameUtils_Ng.X_INDEX];
+
+        for (int row = 0; row < ChessGame.ROW_COUNT; row++) {
+            if (row != y) {
+                endPoints[row][x] = 1;
+            }
+        }
+
+        for (int col = 0; col < ChessGame.COLUMN_COUNT; col++) {
+            if (col != x) {
+                endPoints[y][col] = 1;
+            }
+        }
+
+        endPoints[y][x] = 0;
+
+        return endPoints;
     }
 }
