@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  @author Jeffrey Ng
  @created 2020-05-12 */
-public class ChessGameImpl_Ngg implements ChessGame {
+public class ChessGameImpl_Ng implements ChessGame {
     private static final int BLACK_ROYAL_FAMILY_INDEX = 0;
     private static final int BLACK_PAWN_ROW_INDEX = 1;
     private static final int WHITE_PAWN_ROW_INDEX = 6;
@@ -27,7 +27,7 @@ public class ChessGameImpl_Ngg implements ChessGame {
     private Piece[][] board;
     private List<Move> moveHistory;
 
-    public ChessGameImpl_Ngg() {
+    public ChessGameImpl_Ng() {
         board = new Piece[ROW_COUNT][COLUMN_COUNT];
         board[BLACK_ROYAL_FAMILY_INDEX] = new Piece[] {
                 new Rook(Player.BLACK), new Knight(Player.BLACK), new Bishop(Player.BLACK), new King(Player.BLACK),
