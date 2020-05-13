@@ -1,6 +1,7 @@
 package chess.piece;
 
 import chess.*;
+import chess.piece.utils.PieceUtils_Ng;
 import chess.utils.ChessGameUtils_Ng;
 
 /**
@@ -19,27 +20,7 @@ public class Bishop extends Piece {
         throw new RuntimeException("NOW IMPLEMENTED YET");
     }
 
-    /*  Array Representation Board Grid
-            0     1     2     3     4     5     6     7
-         |-----|-----|-----|-----|-----|-----|-----|-----|
-       0 |  R  |  N  |  B  |  K  |  Q  |  B  |  N  |  R  | 0
-         |-----|-----|-----|-----|-----|-----|-----|-----|
-       1 |  P  |  P  |  P  |  P  |  P  |  P  |  P  |  P  | 1
-         |-----|-----|-----|-----|-----|-----|-----|-----|
-       2 |     |     |     |     |     |     |     |     | 2
-         |-----|-----|-----|-----|-----|-----|-----|-----|
-       3 |     |     |     |     |     |     |     |     | 3
-         |-----|-----|-----|-----|-----|-----|-----|-----|
-       4 |     |     |     |     |     |     |     |     | 4
-         |-----|-----|-----|-----|-----|-----|-----|-----|
-       5 |     |     |     |     |     |     |     |     | 5
-         |-----|-----|-----|-----|-----|-----|-----|-----|
-       6 |  P  |  P  |  P  |  P  |  P  |  P  |  P  |  P  | 6
-         |-----|-----|-----|-----|-----|-----|-----|-----|
-       7 |  R  |  N  |  B  |  K  |  Q  |  B  |  N  |  R  | 7
-         |-----|-----|-----|-----|-----|-----|-----|-----|
-            0     1     2     3     4     5     6     7
-
+    /* Notes
             x,y    x,y
             2,1 => 1,0;0,3
                    1,2;3,2
@@ -115,13 +96,16 @@ public class Bishop extends Piece {
     */
     @Override
     public int[][] getEndpointListFromCurrentPosition(GridPosition current) {
-        int[][] endPoints = new int[8][8];
+        int[][] endPoints = new int[ChessGame.ROW_COUNT][ChessGame.COLUMN_COUNT];
         int[] curYX = ChessGameUtils_Ng.convertGridPositionTo2DYXArray(current);
         int y = curYX[ChessGameUtils_Ng.Y_INDEX], x = curYX[ChessGameUtils_Ng.X_INDEX];
+
         for (int row = 0; row < ChessGame.ROW_COUNT; row++) {
             for (int col = 0; col < ChessGame.COLUMN_COUNT; col++) {
-                if ((Math.abs(y - row) == Math.abs(x - col)) && !(row == y && col == x)) {
-                    endPoints[row][col] = 1;
+                if (!PieceUtils_Ng.isCurrent(y, x, row, col)) {
+                    if ((Math.abs(y - row) == Math.abs(x - col))) {
+                        endPoints[row][col] = 1;
+                    }
                 }
             }
         }
