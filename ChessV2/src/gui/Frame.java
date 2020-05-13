@@ -18,6 +18,7 @@ public class Frame {
         JFrame frame = new JFrame("Stack and Queue Gui Example -- Jeffrey Ng");
         frame.setLayout(new FlowLayout());
         frame.addWindowListener(new WindowAdapter() {
+            @Override
             public void windowClosing(WindowEvent windowEvent) {
                 System.exit(0);
             }
