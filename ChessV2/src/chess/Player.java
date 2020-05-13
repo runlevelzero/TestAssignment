@@ -12,13 +12,10 @@ public enum Player {
     }
 
     public static Player translate(String str) {
-        assert str != null;
         return str.toLowerCase().equals("black") ? BLACK : WHITE;
     }
 
-    public static String translate(Player p) {
-        assert p != null;
-        return p.player;
+    public String toString() {
+        return player;
     }
-
 }
