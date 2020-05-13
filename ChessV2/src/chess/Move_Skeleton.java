@@ -8,11 +8,23 @@ public class Move_Skeleton {
     private final GridPosition end;
 
     public Move_Skeleton(Piece piece, GridPosition current, GridPosition end) {
+        assert current != end;
+
         this.piece = piece;
         this.current = current;
         this.end = end;
     }
 
+    /*
+        Precondition(s):
+                None
+
+        Postcondition(s):
+            rv.forEach(i -> i.forEach(k))   =>  i[0] == signedDeltaY && i[1] == signedDeltaX
+                                            =>  -14 <= sum(i, k) <= 14
+                                            =>  -7 <= (i && k) <= 7
+                                            =>  (i == 0 => j != 0) || (j == 0 => i != 0)
+    */
     public int[] getYXDelta() {
         throw new RuntimeException("NOT IMPLEMENTED YET!!");
     }

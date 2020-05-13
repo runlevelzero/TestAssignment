@@ -85,7 +85,7 @@ public class ChessGameImpl_Skeleton implements ChessGame {
                 sb.append(INNER_CELL_BUFFER);
                 if (p != null) {
                     sb.append(p.getPlayer() == Player.BLACK ? "B_" : "W_");
-                    sb.append(p.getSngleCharacterRepr());
+                    sb.append(p.getSingleCharacterRepr());
                 } else {
                     sb.append(EMPTY_GRID_POSITION);
                 }

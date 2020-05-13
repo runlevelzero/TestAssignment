@@ -51,53 +51,57 @@ public interface ChessGame {
 
 
     /*
-            Precondition(s):
-                A
+        Precondition(s):
+                                 position   !=  null
 
-            Postcondition(s):
-                A
+        Postcondition(s):
+            A
      */
     public Piece getPiece(GridPosition position);
 
     /*
-            Precondition(s):
-                A
+        Precondition(s):
+                                    piece   !=  null
+                                      end   !=  null
+                                !isAmbiguousMove(piece, end)
 
-            Postcondition(s):
-                A
+        Postcondition(s):
+            A
      */
     public void movePiece(Piece piece, GridPosition end);
 
     /*
-           Precondition(s):
-               A
+        Precondition(s):
+                                    piece   !=  null
+                                      end   !=  null
+                                !isValidMove(piece, file, end)
 
-           Postcondition(s):
-               A
+        Postcondition(s):
+            A
     */
     public void movePiece(Piece piece, char file, GridPosition end);
 
     /*
-           Precondition(s):
-               A
+        Precondition(s):
+            None
 
-           Postcondition(s):
-               A
+        Postcondition(s):
+            A
     */
     public boolean isAmbiguousMove(Piece piece, GridPosition end);
 
     /*
-           Precondition(s):
-               A
+        Precondition(s):
+            None
 
-           Postcondition(s):
-               A
+        Postcondition(s):
+            A
     */
-    public boolean isValidMove(Piece piece, GridPosition end);
+    public boolean isValidMove(Piece piece, char file, GridPosition end);
 
     /*
         Precondition(s):
-            A
+            None
 
         Postcondition(s):
             A
