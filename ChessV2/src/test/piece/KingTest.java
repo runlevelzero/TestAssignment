@@ -1,4 +1,4 @@
-package chess.piece.test;
+package test.piece;
 
 import chess.GridPosition;
 import chess.piece.Piece;
@@ -9,7 +9,7 @@ import java.lang.reflect.InvocationTargetException;
 import static org.junit.Assert.assertArrayEquals;
 
 /**
- @author Jeffrey NgRookTest
+ @author Jeffrey Ng
  @created 2020-05-13 */
 public class KingTest extends PieceTest {
     @Test

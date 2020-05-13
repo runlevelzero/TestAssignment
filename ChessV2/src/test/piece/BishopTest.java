@@ -1,4 +1,4 @@
-package chess.piece.test;
+package test.piece;
 
 import chess.GridPosition;
 import chess.piece.Piece;
@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import java.lang.reflect.InvocationTargetException;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 
 /**
  @author Jeffrey Ng

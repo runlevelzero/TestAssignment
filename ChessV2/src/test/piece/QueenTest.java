@@ -1,4 +1,4 @@
-package chess.piece.test;
+package test.piece;
 
 import chess.GridPosition;
 import chess.piece.Piece;
@@ -9,11 +9,11 @@ import java.lang.reflect.InvocationTargetException;
 import static org.junit.Assert.assertArrayEquals;
 
 /**
- @author Jeffrey NgRookTest
+ @author Jeffrey Ng
  @created 2020-05-13 */
-public class PawnTest extends PieceTest {
+public class QueenTest extends PieceTest {
     @Test
-    public void pawnA8() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
+    public void queenA8() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
             InstantiationException, IllegalAccessException {
         String testName = Thread.currentThread().getStackTrace()[1].getMethodName();
         GridPosition gp = extractGridPositionFromTestName(testName);
@@ -26,7 +26,7 @@ public class PawnTest extends PieceTest {
     }
 
     @Test
-    public void pawnA5() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
+    public void queenA5() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
             InstantiationException, IllegalAccessException {
         String testName = Thread.currentThread().getStackTrace()[1].getMethodName();
         GridPosition gp = extractGridPositionFromTestName(testName);
@@ -39,7 +39,7 @@ public class PawnTest extends PieceTest {
     }
 
     @Test
-    public void pawnH1() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
+    public void queenH1() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
             InstantiationException, IllegalAccessException {
         String testName = Thread.currentThread().getStackTrace()[1].getMethodName();
         GridPosition gp = extractGridPositionFromTestName(testName);
@@ -52,7 +52,7 @@ public class PawnTest extends PieceTest {
     }
 
     @Test
-    public void pawnA1() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
+    public void queenA1() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
             InstantiationException, IllegalAccessException {
         String testName = Thread.currentThread().getStackTrace()[1].getMethodName();
         GridPosition gp = extractGridPositionFromTestName(testName);
@@ -65,7 +65,7 @@ public class PawnTest extends PieceTest {
     }
 
     @Test
-    public void pawnH8() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
+    public void queenH8() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
             InstantiationException, IllegalAccessException {
         String testName = Thread.currentThread().getStackTrace()[1].getMethodName();
         GridPosition gp = extractGridPositionFromTestName(testName);

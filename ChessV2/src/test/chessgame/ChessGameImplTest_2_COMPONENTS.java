@@ -1,4 +1,4 @@
-package test;
+package test.chessgame;
 
 import chess.GridPosition;
 import chess.Player;
@@ -6,6 +6,7 @@ import chess.piece.*;
 import chess.ChessGame;
 import chess.ChessGameImpl_Skeleton;
 import org.junit.Test;
+import test.Points;
 
 import static chess.GridPosition.*;
 import static org.junit.Assert.*;
