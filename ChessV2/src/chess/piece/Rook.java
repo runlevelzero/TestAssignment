@@ -1,6 +1,7 @@
 package chess.piece;
 
 import chess.GridPosition;
+import chess.Move_Skeleton;
 import chess.Player;
 
 public class Rook extends Piece {
@@ -13,7 +14,17 @@ public class Rook extends Piece {
     }
 
     @Override
-    public int[][] getPotentialMoveDeltas(Piece p, GridPosition current) {
+    public int[][] getYXDeltasFromCurrentPosition(Piece p, GridPosition current) {
+        throw new RuntimeException("NOW IMPLEMENTED YET");
+    }
+
+    @Override
+    public Move_Skeleton[] getMoveListFromCurrentPosition(Piece p, GridPosition current) {
+        throw new RuntimeException("NOW IMPLEMENTED YET");
+    }
+
+    @Override
+    public int[][] getEndpointListFromCurrentPosition(Piece p, GridPosition current) {
         throw new RuntimeException("NOW IMPLEMENTED YET");
     }
 }

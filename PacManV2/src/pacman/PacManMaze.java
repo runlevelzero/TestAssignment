@@ -7,7 +7,7 @@ public abstract class PacManMaze {
 
     public PacManMaze(char[][] maze) {
         this.maze = maze;
-        mazeDimensions = new int[]{maze.length, maze[0].length};
+        mazeDimensions = new int[]{maze[0].length, maze.length,};
         initialPelletCount = countPellets();
     }
 
@@ -20,17 +20,7 @@ public abstract class PacManMaze {
     }
 
     private int countPellets() {
-        int count = 0;
-        for (int row = 0; row < mazeDimensions[0]; row++) {
-            char[] currentRow = maze[row];
-            for (int col = 0; col < mazeDimensions[1]; col++) {
-                if (Pellet.translate(currentRow[col]) != null) {
-                    count += 1;
-                }
-            }
-        }
-
-        return count;
+        return countPellets(null);
     }
 
     private int countPellets(Pellet pellet) {

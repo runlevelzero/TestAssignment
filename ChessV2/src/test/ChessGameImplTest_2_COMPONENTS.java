@@ -19,18 +19,18 @@ public class ChessGameImplTest_2_COMPONENTS extends ChessGameImplTest_1_ENVIRONM
             new Rook(Player.WHITE), WHITE_KNIGHT = new Knight(Player.WHITE), WHITE_BISHOP = new Bishop(Player.WHITE),
             WHITE_KING = new King(Player.WHITE), WHITE_QUEEN = new Queen(Player.WHITE);
 
-    public final char[] intToColTranslation = new char[]{'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'};
+    public final char[] intToColTranslation = new char[]{'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',};
     public final Piece[] startingRow8 = new Piece[]{
-            BLACK_ROOK, BLACK_KNIGHT, BLACK_BISHOP, BLACK_KING, BLACK_QUEEN, BLACK_BISHOP, BLACK_KNIGHT, BLACK_ROOK
+            BLACK_ROOK, BLACK_KNIGHT, BLACK_BISHOP, BLACK_KING, BLACK_QUEEN, BLACK_BISHOP, BLACK_KNIGHT, BLACK_ROOK,
     };
     public final Piece[] startingRow7 = new Piece[]{
-            BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN
+            BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN,
     };
     public final Piece[] startingRow2 = new Piece[]{
-            WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN
+            WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN,
     };
     public final Piece[] startingRow1 = new Piece[]{
-            WHITE_ROOK, WHITE_KNIGHT, WHITE_BISHOP, WHITE_KING, WHITE_QUEEN, WHITE_BISHOP, WHITE_KNIGHT, WHITE_ROOK
+            WHITE_ROOK, WHITE_KNIGHT, WHITE_BISHOP, WHITE_KING, WHITE_QUEEN, WHITE_BISHOP, WHITE_KNIGHT, WHITE_ROOK,
     };
 
     protected void prettyBoard(ChessGame game) {
@@ -49,6 +49,7 @@ public class ChessGameImplTest_2_COMPONENTS extends ChessGameImplTest_1_ENVIRONM
         prettyBoard(game);
     }
 
+    @Points(value = 5)
     @Test
     public void test_getPiece_justInstantiation() {
         TEST_GOAL_MESSAGE = "Get all pieces of a freshly instantiated board";

@@ -78,6 +78,24 @@ public interface ChessGame {
     public void movePiece(Piece piece, char file, GridPosition end);
 
     /*
+           Precondition(s):
+               A
+
+           Postcondition(s):
+               A
+    */
+    public boolean isAmbiguousMove(Piece piece, GridPosition end);
+
+    /*
+           Precondition(s):
+               A
+
+           Postcondition(s):
+               A
+    */
+    public boolean isValidMove(Piece piece, GridPosition end);
+
+    /*
         Precondition(s):
             A
 

@@ -1,6 +1,7 @@
 package chess.piece;
 
 import chess.GridPosition;
+import chess.Move_Skeleton;
 import chess.Player;
 
 import java.util.HashMap;
@@ -35,7 +36,35 @@ public abstract class Piece {
         this.singleCharacterRepr = Character.toUpperCase(singleCharacterRepr);
     }
 
-    public abstract int[][] getPotentialMoveDeltas(Piece p, GridPosition current);
+    /*
+           Precondition(s):
+                                    p       != null
+                                current     != null
+           Postcondition(s):
+               A
+    */
+    public abstract int[][] getYXDeltasFromCurrentPosition(Piece p, GridPosition current);
+
+    /*
+           Precondition(s):
+                                    p       != null
+                                current     != null
+
+           Postcondition(s):
+               A
+    */
+    public abstract Move_Skeleton[] getMoveListFromCurrentPosition(Piece p, GridPosition current);
+
+    /*
+        Precondition(s):
+                                    p       != null
+                                current     != null
+        Postcondition(s):
+                            rv.length       == 8
+            rv.forEach(i)   => i.length     == 8
+            rv.forEach(i -> i.forEach(k))   =>  k == 0 || k == 1
+    */
+    public abstract int[][] getEndpointListFromCurrentPosition(Piece p, GridPosition current);
 
     public String getLabel() {
         return label;

@@ -8,20 +8,9 @@ public class Move_Skeleton {
     private final GridPosition end;
 
     public Move_Skeleton(Piece piece, GridPosition current, GridPosition end) {
-        assert isAmbiguousMove(piece, end);
-        assert isValidMove(piece, end);
-
         this.piece = piece;
         this.current = current;
         this.end = end;
-    }
-
-    public boolean isAmbiguousMove(Piece piece, GridPosition end) {
-        throw new RuntimeException("NOT YET IMPLEMENTED!!");
-    }
-
-    public boolean isValidMove(Piece piece, GridPosition end) {
-        throw new RuntimeException("NOT IMPLEMENTED YET!!");
     }
 
     public int[] getYXDelta() {

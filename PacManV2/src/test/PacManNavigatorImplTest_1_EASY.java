@@ -28,7 +28,7 @@ public class PacManNavigatorImplTest_1_EASY {
         char[][] maze = new char[][]{
                 row01.toCharArray(), row02.toCharArray(), row03.toCharArray(), row04.toCharArray(), row05.toCharArray(),
                 row06.toCharArray(), row07.toCharArray(), row08.toCharArray(), row09.toCharArray(), row10.toCharArray(),
-                row11.toCharArray(), row12.toCharArray(), row13.toCharArray()
+                row11.toCharArray(), row12.toCharArray(), row13.toCharArray(),
         };
 
 
