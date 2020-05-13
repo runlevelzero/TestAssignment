@@ -1,4 +1,4 @@
-package chess.piece.test;
+package test.piece;
 
 import chess.GridPosition;
 import chess.piece.Piece;
@@ -9,11 +9,11 @@ import java.lang.reflect.InvocationTargetException;
 import static org.junit.Assert.assertArrayEquals;
 
 /**
- @author Jeffrey NgRookTest
+ @author Jeffrey Ng
  @created 2020-05-13 */
-public class KnightTest extends PieceTest {
+public class RookTest extends PieceTest {
     @Test
-    public void knightA8() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
+    public void rookA8() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
             InstantiationException, IllegalAccessException {
         String testName = Thread.currentThread().getStackTrace()[1].getMethodName();
         GridPosition gp = extractGridPositionFromTestName(testName);
@@ -26,7 +26,7 @@ public class KnightTest extends PieceTest {
     }
 
     @Test
-    public void knightA5() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
+    public void rookA5() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
             InstantiationException, IllegalAccessException {
         String testName = Thread.currentThread().getStackTrace()[1].getMethodName();
         GridPosition gp = extractGridPositionFromTestName(testName);
@@ -39,7 +39,7 @@ public class KnightTest extends PieceTest {
     }
 
     @Test
-    public void knightH1() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
+    public void rookH1() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
             InstantiationException, IllegalAccessException {
         String testName = Thread.currentThread().getStackTrace()[1].getMethodName();
         GridPosition gp = extractGridPositionFromTestName(testName);
@@ -52,7 +52,7 @@ public class KnightTest extends PieceTest {
     }
 
     @Test
-    public void knightA1() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
+    public void rookA1() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
             InstantiationException, IllegalAccessException {
         String testName = Thread.currentThread().getStackTrace()[1].getMethodName();
         GridPosition gp = extractGridPositionFromTestName(testName);
@@ -65,7 +65,7 @@ public class KnightTest extends PieceTest {
     }
 
     @Test
-    public void knightH8() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
+    public void rookH8() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
             InstantiationException, IllegalAccessException {
         String testName = Thread.currentThread().getStackTrace()[1].getMethodName();
         GridPosition gp = extractGridPositionFromTestName(testName);

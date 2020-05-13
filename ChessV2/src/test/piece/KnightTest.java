@@ -1,4 +1,4 @@
-package chess.piece.test;
+package test.piece;
 
 import chess.GridPosition;
 import chess.piece.Piece;
@@ -11,9 +11,9 @@ import static org.junit.Assert.assertArrayEquals;
 /**
  @author Jeffrey NgRookTest
  @created 2020-05-13 */
-public class KingTest extends PieceTest {
+public class KnightTest extends PieceTest {
     @Test
-    public void kingA8() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
+    public void knightA8() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
             InstantiationException, IllegalAccessException {
         String testName = Thread.currentThread().getStackTrace()[1].getMethodName();
         GridPosition gp = extractGridPositionFromTestName(testName);
@@ -26,7 +26,7 @@ public class KingTest extends PieceTest {
     }
 
     @Test
-    public void kingA5() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
+    public void knightA5() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
             InstantiationException, IllegalAccessException {
         String testName = Thread.currentThread().getStackTrace()[1].getMethodName();
         GridPosition gp = extractGridPositionFromTestName(testName);
@@ -39,7 +39,7 @@ public class KingTest extends PieceTest {
     }
 
     @Test
-    public void kingH1() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
+    public void knightH1() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
             InstantiationException, IllegalAccessException {
         String testName = Thread.currentThread().getStackTrace()[1].getMethodName();
         GridPosition gp = extractGridPositionFromTestName(testName);
@@ -52,7 +52,7 @@ public class KingTest extends PieceTest {
     }
 
     @Test
-    public void kingA1() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
+    public void knightA1() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
             InstantiationException, IllegalAccessException {
         String testName = Thread.currentThread().getStackTrace()[1].getMethodName();
         GridPosition gp = extractGridPositionFromTestName(testName);
@@ -65,7 +65,7 @@ public class KingTest extends PieceTest {
     }
 
     @Test
-    public void kingH8() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
+    public void knightH8() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
             InstantiationException, IllegalAccessException {
         String testName = Thread.currentThread().getStackTrace()[1].getMethodName();
         GridPosition gp = extractGridPositionFromTestName(testName);

@@ -1,6 +1,7 @@
-package test;
+package test.chessgame;
 
 import org.junit.Test;
+import test.Points;
 
 /**
  @author Jeffrey Ng

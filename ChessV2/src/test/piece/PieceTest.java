@@ -1,9 +1,8 @@
-package chess.piece.test;
+package test.piece;
 
 import chess.GridPosition;
 import chess.Player;
 import chess.piece.Piece;
-import org.junit.Test;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
