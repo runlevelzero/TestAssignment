@@ -9,7 +9,7 @@ import java.lang.reflect.InvocationTargetException;
 import static org.junit.Assert.assertArrayEquals;
 
 /**
- @author Jeffrey NgRookTest
+ @author Jeffrey Ng
  @created 2020-05-13 */
 public class KnightTest extends PieceTest {
     @Test
