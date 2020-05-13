@@ -57,7 +57,7 @@ public class ChessGameImpl_Skeleton implements ChessGame {
     }
 
     @Override
-    public boolean isValidMove(Piece piece, GridPosition end) {
+    public boolean isValidMove(Piece piece, char file, GridPosition end) {
         throw new RuntimeException("NOT IMPLEMENTED YET!!");
     }
 
