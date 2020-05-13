@@ -9,8 +9,10 @@ import pacman.PacManNavigatorImpl_Skeleton;
 
 import static org.junit.Assert.*;
 
-public class PacManNavigatorImplTest_1_EASY {
-
+/**
+ @author Jeffrey Ng
+ @created 2020-05-13 */
+public class PacManNavigatorImplTest_2_COMPONENTS extends PacManNavigatorImplTest_1_ENVIRONMENT {
     protected char[][] buildMazeSimpleNoCherries() {
         String row01 = "|===================|";
         String row02 = "|*******************|";
