@@ -13,7 +13,8 @@ public class Move {
     private final Piece piece;
     private final GridPosition current;
     private final GridPosition end;
-
+    static {
+    }
     public Move(Piece piece, GridPosition current, GridPosition end) {
         assert current != end;
 
