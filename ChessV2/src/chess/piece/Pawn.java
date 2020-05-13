@@ -3,14 +3,17 @@ package chess.piece;
 import chess.GridPosition;
 import chess.Move_Skeleton;
 import chess.Player;
+import chess.Label;
 
+/**
+ @author Jeffrey Ng
+ @created 2020-05-12 */
 public class Pawn extends Piece {
-    private static final String PAWN_STRING_REPR = "PAWN";
+    private static final Label PAWN_LABEL = Label.PAWN;
     private static final int PAWN_POINT_VALUE = 1;
-    private static final char PAWN_SINGLE_CHAR_REPR = 'P';
 
     public Pawn(Player player) {
-        super(PAWN_STRING_REPR, player, PAWN_POINT_VALUE, PAWN_SINGLE_CHAR_REPR);
+        super(PAWN_LABEL, player, PAWN_POINT_VALUE);
     }
 
     @Override

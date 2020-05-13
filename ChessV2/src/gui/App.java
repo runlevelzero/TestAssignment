@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 /**
  @author Jeffrey Ng
- @created 2020-05-13 07:51 */
+ @created 2020-05-13 */
 public class App {
     private JPanel panelMain;
     private JButton button1;

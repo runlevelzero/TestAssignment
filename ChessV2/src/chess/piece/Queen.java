@@ -3,14 +3,17 @@ package chess.piece;
 import chess.GridPosition;
 import chess.Move_Skeleton;
 import chess.Player;
+import chess.Label;
 
+/**
+ @author Jeffrey Ng
+ @created 2020-05-12 */
 public class Queen extends Piece {
-    private static final String QUEEN_STRING_REPR = "QUEEN";
+    private static final Label QUEEN_LABEL = Label.QUEEN;
     private static final int QUEEN_POINT_VALUE = 9;
-    private static final char QUEEN_SINGLE_CHAR_REPR = 'Q';
 
     public Queen(Player player) {
-        super(QUEEN_STRING_REPR, player, QUEEN_POINT_VALUE, QUEEN_SINGLE_CHAR_REPR);
+        super(QUEEN_LABEL, player, QUEEN_POINT_VALUE);
     }
 
     @Override

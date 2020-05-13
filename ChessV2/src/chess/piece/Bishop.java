@@ -3,14 +3,17 @@ package chess.piece;
 import chess.GridPosition;
 import chess.Move_Skeleton;
 import chess.Player;
+import chess.Label;
 
+/**
+ @author Jeffrey Ng
+ @created 2020-05-12 */
 public class Bishop extends Piece {
-    private static final String BISHOP_STRING_REPR = "BISHOP";
+    private static final Label BISHOP_LABEL = Label.BISHOP;
     private static final int BISHOP_POINT_VALUE = 3;
-    private static final char BISHOP_SINGLE_CHAR_REPR = 'B';
 
     public Bishop(Player player) {
-        super(BISHOP_STRING_REPR, player, BISHOP_POINT_VALUE, BISHOP_SINGLE_CHAR_REPR);
+        super(BISHOP_LABEL, player, BISHOP_POINT_VALUE);
     }
 
     @Override

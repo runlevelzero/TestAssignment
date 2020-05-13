@@ -3,14 +3,17 @@ package chess.piece;
 import chess.GridPosition;
 import chess.Move_Skeleton;
 import chess.Player;
+import chess.Label;
 
+/**
+ @author Jeffrey Ng
+ @created 2020-05-12 */
 public class Knight extends Piece {
-    private static final String KNIGHT_STRING_REPR = "KNIGHT";
+    private static final Label KNIGHT_LABEL = Label.KNIGHT;
     private static final int KNIGHT_POINT_VALUE = 3;
-    private static final char KNIGHT_SINGLE_CHAR_REPR = 'N';
 
     public Knight(Player player) {
-        super(KNIGHT_STRING_REPR, player, KNIGHT_POINT_VALUE, KNIGHT_SINGLE_CHAR_REPR);
+        super(KNIGHT_LABEL, player, KNIGHT_POINT_VALUE);
     }
 
     @Override

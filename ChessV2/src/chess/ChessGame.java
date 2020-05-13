@@ -2,6 +2,9 @@ package chess;
 
 import chess.piece.Piece;
 
+/**
+ @author Jeffrey Ng
+ @created 2020-05-12 */
 public interface ChessGame {
     public static final int ROW_COUNT = 8;
     public static final int COLUMN_COUNT = 8;

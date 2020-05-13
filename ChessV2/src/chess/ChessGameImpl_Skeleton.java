@@ -5,6 +5,9 @@ import chess.piece.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ @author Jeffrey Ng
+ @created 2020-05-12 */
 public class ChessGameImpl_Skeleton implements ChessGame {
     private static final int BLACK_ROYAL_FAMILY_INDEX = 0;
     private static final int BLACK_PAWN_ROW_INDEX = 1;
@@ -83,7 +86,7 @@ public class ChessGameImpl_Skeleton implements ChessGame {
                 sb.append(INNER_CELL_BUFFER);
                 if (p != null) {
                     sb.append(p.getPlayer() == Player.BLACK ? "B_" : "W_");
-                    sb.append(p.getSingleCharacterRepr());
+                    sb.append(p.getLabelShort());
                 } else {
                     sb.append(EMPTY_GRID_POSITION);
                 }

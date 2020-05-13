@@ -1,37 +1,40 @@
 package chess.piece;
 
 import chess.GridPosition;
+import chess.Label;
 import chess.Move_Skeleton;
 import chess.Player;
+
+import static chess.Label.*;
 
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ @author Jeffrey Ng
+ @created 2020-05-12 */
 public abstract class Piece {
-    private static final Map<String, Integer> labelToPoint = new HashMap<>();
+    private static final Map<Label, Integer> labelToPoint = new HashMap<>();
     static {
-        labelToPoint.put("PAWN", 1);
-        labelToPoint.put("ROOK", 5);
-        labelToPoint.put("KNIGHT", 3);
-        labelToPoint.put("BISHOP", 3);
-        labelToPoint.put("QUEEN", 9);
-        labelToPoint.put("KING", 0);
+        labelToPoint.put(PAWN, 1);
+        labelToPoint.put(ROOK, 5);
+        labelToPoint.put(KNIGHT, 3);
+        labelToPoint.put(BISHOP, 3);
+        labelToPoint.put(QUEEN, 9);
+        labelToPoint.put(KING, 0);
     }
-    private final String label;
-    private final int pointValue;
     private final Player player;
-    private final char singleCharacterRepr;
+    private final Label label;
+    private final char labelShort;
+    private final int pointValue;
 
-    public Piece(final String label, final Player player, final int pointValue, final char singleCharacterRepr) {
-        assert labelToPoint.containsKey(label.toUpperCase());
-        assert labelToPoint.get(label.toUpperCase()) == pointValue;
-        assert (label.toUpperCase().charAt(0) == Character.toUpperCase(singleCharacterRepr)) ||
-               (label.toUpperCase().equals("KNIGHT") && ('N' == Character.toUpperCase(singleCharacterRepr)));
+    public Piece(final Label label, final Player player, final int pointValue) {
+        assert labelToPoint.get(label) == pointValue;
 
         this.player = player;
+        this.label = label;
+        this.labelShort = label.getLabelShort();
         this.pointValue = pointValue;
-        this.label = label.toUpperCase();
-        this.singleCharacterRepr = Character.toUpperCase(singleCharacterRepr);
     }
 
     /*
@@ -63,16 +66,16 @@ public abstract class Piece {
     */
     public abstract int[][] getEndpointListFromCurrentPosition(Piece piece, GridPosition current);
 
-    public String getLabel() {
-        return label;
-    }
-
     public Player getPlayer() {
         return player;
     }
 
-    public char getSingleCharacterRepr() {
-        return singleCharacterRepr;
+    public Label getLabel() {
+        return label;
+    }
+
+    public char getLabelShort() {
+        return labelShort;
     }
 
     public int getPointValue() {

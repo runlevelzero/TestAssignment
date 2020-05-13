@@ -10,6 +10,9 @@ import org.junit.Test;
 import static chess.GridPosition.*;
 import static org.junit.Assert.*;
 
+/**
+ @author Jeffrey Ng
+ @created 2020-05-12 */
 public class ChessGameImplTest_2_COMPONENTS extends ChessGameImplTest_1_ENVIRONMENT {
     public final int ROW_COUNT = ChessGame.ROW_COUNT;
     public final int COL_COUNT = ChessGame.COLUMN_COUNT;

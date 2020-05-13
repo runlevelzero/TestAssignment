@@ -2,6 +2,9 @@ package chess;
 
 import chess.piece.Piece;
 
+/**
+ @author Jeffrey Ng
+ @created 2020-05-12 */
 public class Move_Skeleton {
     private final Piece piece;
     private final GridPosition current;

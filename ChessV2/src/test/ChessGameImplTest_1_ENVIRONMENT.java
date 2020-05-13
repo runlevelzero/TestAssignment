@@ -2,6 +2,9 @@ package test;
 
 import org.junit.Test;
 
+/**
+ @author Jeffrey Ng
+ @created 2020-05-12 */
 public class ChessGameImplTest_1_ENVIRONMENT {
     protected String TEST_GOAL_MESSAGE;
 

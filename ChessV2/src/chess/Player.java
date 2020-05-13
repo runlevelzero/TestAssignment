@@ -1,5 +1,8 @@
 package chess;
 
+/**
+ @author Jeffrey Ng
+ @created 2020-05-12 */
 public enum Player {
     BLACK("Black"), WHITE("White");
     private final String player;

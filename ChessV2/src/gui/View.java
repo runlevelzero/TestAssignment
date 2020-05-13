@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 
 /**
  @author Jeffrey Ng
- @created 2020-05-13 07:48 */
+ @created 2020-05-13 */
 public class View extends JPanel implements ActionListener {
 
     Engine chessEngine;
