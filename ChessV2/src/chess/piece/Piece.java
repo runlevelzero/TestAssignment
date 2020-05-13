@@ -37,34 +37,33 @@ public abstract class Piece {
     }
 
     /*
-           Precondition(s):
-                                    p       != null
-                                current     != null
-           Postcondition(s):
-               A
-    */
-    public abstract int[][] getYXDeltasFromCurrentPosition(Piece p, GridPosition current);
+       Precondition(s):
+                                    piece   !=  null
+                                  current   !=  null
 
-    /*
-           Precondition(s):
-                                    p       != null
-                                current     != null
-
-           Postcondition(s):
-               A
+       Postcondition(s):
+                                piece == PAWN   =>  0 <= rv.size <= 8
+                                piece == ROOK   =>  0 <  rv.size <= 14
+                              piece == KNIGHT   =>  0 <  rv.size <= 8
+                              piece == BISHOP   =>  0 <  rv.size <= 13
+                               piece == QUEEN   =>  0 <  rv.size <= 27
+                                piece == KING   =>  0 <  rv.size <= 8
     */
-    public abstract Move_Skeleton[] getMoveListFromCurrentPosition(Piece p, GridPosition current);
+    public abstract Move_Skeleton[] getMoveListFromCurrentPosition(Piece piece, GridPosition current);
 
     /*
         Precondition(s):
-                                    p       != null
-                                current     != null
+                                    piece   !=  null
+                                  current   !=  null
+
         Postcondition(s):
-                            rv.length       == 8
-            rv.forEach(i)   => i.length     == 8
+                                rv.length   ==  8
+                            rv.forEach(i)   =>  i.length == 8
             rv.forEach(i -> i.forEach(k))   =>  k == 0 || k == 1
+                             rv[y][x] = 1   =>  y != currentTranslatedToYCoordinate &&
+                                                x != currentTranslatedToXCoordinate
     */
-    public abstract int[][] getEndpointListFromCurrentPosition(Piece p, GridPosition current);
+    public abstract int[][] getEndpointListFromCurrentPosition(Piece piece, GridPosition current);
 
     public String getLabel() {
         return label;
@@ -74,7 +73,7 @@ public abstract class Piece {
         return player;
     }
 
-    public char getSngleCharacterRepr() {
+    public char getSingleCharacterRepr() {
         return singleCharacterRepr;
     }
 

@@ -14,17 +14,12 @@ public class Knight extends Piece {
     }
 
     @Override
-    public int[][] getYXDeltasFromCurrentPosition(Piece p, GridPosition current) {
+    public Move_Skeleton[] getMoveListFromCurrentPosition(Piece piece, GridPosition current) {
         throw new RuntimeException("NOW IMPLEMENTED YET");
     }
 
     @Override
-    public Move_Skeleton[] getMoveListFromCurrentPosition(Piece p, GridPosition current) {
-        throw new RuntimeException("NOW IMPLEMENTED YET");
-    }
-
-    @Override
-    public int[][] getEndpointListFromCurrentPosition(Piece p, GridPosition current) {
+    public int[][] getEndpointListFromCurrentPosition(Piece piece, GridPosition current) {
         throw new RuntimeException("NOW IMPLEMENTED YET");
     }
 }
