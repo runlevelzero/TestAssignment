@@ -13,25 +13,27 @@ import static org.junit.Assert.*;
 public class ChessGameImplTest_2_COMPONENTS extends ChessGameImplTest_1_ENVIRONMENT {
     public final int ROW_COUNT = ChessGame.ROW_COUNT;
     public final int COL_COUNT = ChessGame.COLUMN_COUNT;
-    public final Piece BLACK_PAWN = new Pawn(Player.BLACK), BLACK_ROOK = new Rook(Player.BLACK), BLACK_KNIGHT =
-            new Knight(Player.BLACK), BLACK_BISHOP = new Bishop(Player.BLACK), BLACK_KING = new King(Player.BLACK),
-            BLACK_QUEEN = new Queen(Player.BLACK), WHITE_PAWN = new Pawn(Player.WHITE), WHITE_ROOK =
-            new Rook(Player.WHITE), WHITE_KNIGHT = new Knight(Player.WHITE), WHITE_BISHOP = new Bishop(Player.WHITE),
+    public final Piece
+            BLACK_PAWN = new Pawn(Player.BLACK), BLACK_ROOK = new Rook(Player.BLACK),
+            BLACK_KNIGHT = new Knight(Player.BLACK), BLACK_BISHOP = new Bishop(Player.BLACK),
+            BLACK_KING = new King(Player.BLACK), BLACK_QUEEN = new Queen(Player.BLACK),
+            WHITE_PAWN = new Pawn(Player.WHITE), WHITE_ROOK = new Rook(Player.WHITE),
+            WHITE_KNIGHT = new Knight(Player.WHITE), WHITE_BISHOP = new Bishop(Player.WHITE),
             WHITE_KING = new King(Player.WHITE), WHITE_QUEEN = new Queen(Player.WHITE);
 
-    public final char[] intToColTranslation = new char[]{'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',};
-    public final Piece[] startingRow8 = new Piece[]{
+    public final char[] intToColTranslation = new char[] {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',};
+    public final Piece[] startingRow8 = new Piece[] {
             BLACK_ROOK, BLACK_KNIGHT, BLACK_BISHOP, BLACK_KING, BLACK_QUEEN, BLACK_BISHOP, BLACK_KNIGHT, BLACK_ROOK,
-    };
-    public final Piece[] startingRow7 = new Piece[]{
+            };
+    public final Piece[] startingRow7 = new Piece[] {
             BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN,
-    };
-    public final Piece[] startingRow2 = new Piece[]{
+            };
+    public final Piece[] startingRow2 = new Piece[] {
             WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN,
-    };
-    public final Piece[] startingRow1 = new Piece[]{
+            };
+    public final Piece[] startingRow1 = new Piece[] {
             WHITE_ROOK, WHITE_KNIGHT, WHITE_BISHOP, WHITE_KING, WHITE_QUEEN, WHITE_BISHOP, WHITE_KNIGHT, WHITE_ROOK,
-    };
+            };
 
     protected void prettyBoard(ChessGame game) {
         System.out.println(game);

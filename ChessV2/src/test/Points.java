@@ -7,8 +7,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import static java.lang.annotation.ElementType.METHOD;
 
 /**
- * @author kart
- */
+ @author kart */
 @Retention(value = RUNTIME)
 @Target(value = METHOD)
 public @interface Points {

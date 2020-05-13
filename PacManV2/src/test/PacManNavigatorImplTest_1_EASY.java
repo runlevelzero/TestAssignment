@@ -1,15 +1,15 @@
 package test;
 
 import org.junit.Test;
-import pacman.Direction;
+
+import static pacman.Direction.*;
+
 import pacman.PacManNavigator;
 import pacman.PacManNavigatorImpl_Skeleton;
 
 import static org.junit.Assert.*;
 
-
 public class PacManNavigatorImplTest_1_EASY {
-    public final Direction N = Direction.N, E = Direction.E, S = Direction.S, W = Direction.W;
 
     protected char[][] buildMazeSimpleNoCherries() {
         String row01 = "|===================|";
@@ -25,14 +25,12 @@ public class PacManNavigatorImplTest_1_EASY {
         String row11 = "|*|******|=|******|*|";
         String row12 = "|***|==|*****|==|***|";
         String row13 = "|===================|";
-        char[][] maze = new char[][]{
+
+        return new char[][] {
                 row01.toCharArray(), row02.toCharArray(), row03.toCharArray(), row04.toCharArray(), row05.toCharArray(),
                 row06.toCharArray(), row07.toCharArray(), row08.toCharArray(), row09.toCharArray(), row10.toCharArray(),
                 row11.toCharArray(), row12.toCharArray(), row13.toCharArray(),
-        };
-
-
-        return maze;
+                };
     }
 
     protected PacManNavigator getPacManSimpleNoCherries(int maxTurns) {
@@ -46,14 +44,14 @@ public class PacManNavigatorImplTest_1_EASY {
         System.out.println(navigator);
 
         assertTrue(true);
-        //
-        //        navigator.move(E);
-        //        navigator.move(E);
-        //        navigator.move(E);
-        //        navigator.move(S);
-        //        navigator.move(S);
-        //        navigator.move(W);
-        //        navigator.move(W);
+
+        navigator.move(E);
+        navigator.move(E);
+        navigator.move(E);
+        navigator.move(S);
+        navigator.move(S);
+        navigator.move(W);
+        navigator.move(W);
 
     }
 

@@ -6,7 +6,7 @@ public enum Pellet {
     private final char ch;
     private final int point;
 
-    Pellet(final char ch,int point) {
+    Pellet(final char ch, int point) {
         this.ch = ch;
         this.point = point;
     }
@@ -25,6 +25,7 @@ public enum Pellet {
         }
         return p;
     }
+
     public static char pelletAsChar(Pellet p) {
         return p.ch;
     }

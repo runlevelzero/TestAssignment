@@ -1,13 +1,14 @@
 package pacman;
 
 public abstract class PacManMaze {
-    protected char[][] maze;
+    public static final int DOT_VALUE = Pellet.pelletValue(Pellet.DOT);
     private final int[] mazeDimensions;
     private final int initialPelletCount;
+    protected char[][] maze;
 
     public PacManMaze(char[][] maze) {
         this.maze = maze;
-        mazeDimensions = new int[]{maze[0].length, maze.length,};
+        mazeDimensions = new int[] {maze[0].length, maze.length,};
         initialPelletCount = countPellets();
     }
 
@@ -36,8 +37,6 @@ public abstract class PacManMaze {
 
         return count;
     }
-
-    public static final int DOT_VALUE = Pellet.pelletValue(Pellet.DOT);
 
     public int maxPotentialPoints() {
         int dotCount = countPellets(Pellet.DOT);

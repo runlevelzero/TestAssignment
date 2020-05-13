@@ -3,8 +3,8 @@ package chess;
 import chess.piece.Piece;
 
 public interface ChessGame {
-    public final int ROW_COUNT = 8;
-    public final int COLUMN_COUNT = 8;
+    public static final int ROW_COUNT = 8;
+    public static final int COLUMN_COUNT = 8;
     /*  Actual Board Grid
             A     B     C     D     E     F     G     H
          |-----|-----|-----|-----|-----|-----|-----|-----|
@@ -25,7 +25,7 @@ public interface ChessGame {
        1 |  R  |  N  |  B  |  K  |  Q  |  B  |  N  |  R  | 1
          |-----|-----|-----|-----|-----|-----|-----|-----|
             A     B     C     D     E     F     G     H
-     */
+    */
 
     /*  Array Representation Board Grid
             0     1     2     3     4     5     6     7
@@ -47,8 +47,7 @@ public interface ChessGame {
        7 |  R  |  N  |  B  |  K  |  Q  |  B  |  N  |  R  | 7
          |-----|-----|-----|-----|-----|-----|-----|-----|
             0     1     2     3     4     5     6     7
-     */
-
+    */
 
     /*
         Precondition(s):
@@ -56,7 +55,7 @@ public interface ChessGame {
 
         Postcondition(s):
             A
-     */
+    */
     public Piece getPiece(GridPosition position);
 
     /*
@@ -67,7 +66,7 @@ public interface ChessGame {
 
         Postcondition(s):
             A
-     */
+    */
     public void movePiece(Piece piece, GridPosition end);
 
     /*

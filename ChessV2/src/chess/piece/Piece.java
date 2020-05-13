@@ -8,13 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public abstract class Piece {
-    private final String label;
-    private final int pointValue;
-    private final Player player;
-    private final char singleCharacterRepr;
-
     private static final Map<String, Integer> labelToPoint = new HashMap<>();
-
     static {
         labelToPoint.put("PAWN", 1);
         labelToPoint.put("ROOK", 5);
@@ -23,6 +17,10 @@ public abstract class Piece {
         labelToPoint.put("QUEEN", 9);
         labelToPoint.put("KING", 0);
     }
+    private final String label;
+    private final int pointValue;
+    private final Player player;
+    private final char singleCharacterRepr;
 
     public Piece(final String label, final Player player, final int pointValue, final char singleCharacterRepr) {
         assert labelToPoint.containsKey(label.toUpperCase());
