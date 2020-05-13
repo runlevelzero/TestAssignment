@@ -3,6 +3,9 @@ package chess;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ @author Jeffrey Ng
+ @created 2020-05-12 */
 public enum GridPosition {
     A1("A1"),
     A2("A2"),
