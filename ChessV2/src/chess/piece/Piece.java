@@ -50,7 +50,7 @@ public abstract class Piece {
                                piece == QUEEN   =>  0 <  rv.size <= 27
                                 piece == KING   =>  0 <  rv.size <= 8
     */
-    public abstract Move_Skeleton[] getMoveListFromCurrentPosition(Piece piece, GridPosition current);
+    public abstract Move_Skeleton[] getMoveListFromCurrentPosition(GridPosition current);
 
     /*
         Precondition(s):
@@ -64,7 +64,11 @@ public abstract class Piece {
                              rv[y][x] = 1   =>  y != currentTranslatedToYCoordinate &&
                                                 x != currentTranslatedToXCoordinate
     */
-    public abstract int[][] getEndpointListFromCurrentPosition(Piece piece, GridPosition current);
+    public abstract int[][] getEndpointListFromCurrentPosition(GridPosition current);
+
+    public String toString() {
+        return String.format("%s %s", player, label);
+    }
 
     public Player getPlayer() {
         return player;
