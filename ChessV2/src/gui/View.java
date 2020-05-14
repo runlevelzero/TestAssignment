@@ -12,31 +12,30 @@ import java.awt.event.ActionListener;
  @created 2020-05-13 */
 public class View extends JPanel implements ActionListener {
 
+    public static final int MARGIN = Frame.FRAME_WIDTH / 10;
+
+    BoardPanel boardPanel;
     Engine chessEngine;
     ChangeListener chessEngineListener;
 
     public View(Engine chessEngine) {
         super();
-        this.setPreferredSize(new Dimension(Frame.FRAME_WIDTH, Frame.FRAME_HEIGHT));
+        this.setPreferredSize(new Dimension(Frame.FRAME_WIDTH - MARGIN, Frame.FRAME_HEIGHT - MARGIN));
         this.setLayout(new BorderLayout());
         this.chessEngine = chessEngine;
 
-        chessEngineListener = new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-                update();
-            }
-        };
+        chessEngineListener = e -> update();
+        chessEngine.addChangeListener(chessEngineListener);
 
         init();
     }
 
     private void init() {
-
+        boardPanel = new BoardPanel(chessEngine);
+        this.add(boardPanel);
     }
 
     private void update() {
-        // repaint all models (engines)
         repaint();
     }
 
