@@ -58,9 +58,9 @@ public class Knight extends Piece {
         int[] curYX = ChessGameUtils_Ng.convertGridPositionTo2DYXArray(current);
         int y = curYX[ChessGameUtils_Ng.Y_INDEX], x = curYX[ChessGameUtils_Ng.X_INDEX];
 
-        int lowY = Math.max(y - KNIGHT_STEP_ONE_SIZE, 0);
+        int lowY = Math.max(y - KNIGHT_STEP_ONE_SIZE, PieceUtils_Ng.OFF_BOARD_DEFAULT_LOWER_BOUND);
         int highY = Math.min(y + KNIGHT_STEP_ONE_SIZE, ChessGame.ROW_COUNT);
-        int lowX = Math.max(x - KNIGHT_STEP_ONE_SIZE, 0);
+        int lowX = Math.max(x - KNIGHT_STEP_ONE_SIZE, PieceUtils_Ng.OFF_BOARD_DEFAULT_LOWER_BOUND);
         int highX = Math.min(x + KNIGHT_STEP_ONE_SIZE, ChessGame.COLUMN_COUNT);
 
         for (int row = lowY; row <= highY; row++) {
