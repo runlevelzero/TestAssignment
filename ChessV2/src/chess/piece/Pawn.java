@@ -1,6 +1,7 @@
 package chess.piece;
 
 import chess.*;
+import chess.piece.utils.PieceUtils_Ng;
 import chess.utils.ChessGameUtils_Ng;
 
 /**
@@ -11,33 +12,8 @@ public class Pawn extends Piece {
     private static final int PAWN_POINT_VALUE = 1;
     private static final int PAWN_STEP_SIZE = 1;
     private static final int PAWN_SPECIAL_STEP_SIZE = 2;
-
-    /* Notes
-            x,y    x,y
-            0,0 => 2,1
-                   1,2
-    */
-    /*  Array Representation Board Grid
-            0     1     2     3     4     5     6     7
-         |-----|-----|-----|-----|-----|-----|-----|-----|
-       0 |     |     |     |     |     |     |     |     | 0
-         |-----|-----|-----|-----|-----|-----|-----|-----|
-       1 |     |     |     |     |     |     |     |     | 1
-         |-----|-----|-----|-----|-----|-----|-----|-----|
-       2 |     |     |     |     |     |     |     |     | 2
-         |-----|-----|-----|-----|-----|-----|-----|-----|
-       3 |     |     |     |     |     |     |     |     | 3
-         |-----|-----|-----|-----|-----|-----|-----|-----|
-       4 |     |     |     |     |     |     |     |     | 4
-         |-----|-----|-----|-----|-----|-----|-----|-----|
-       5 |     |     |  S  |     |     |     |     |     | 5
-         |-----|-----|-----|-----|-----|-----|-----|-----|
-       6 |     |     |     |     |     |     |     |     | 6
-         |-----|-----|-----|-----|-----|-----|-----|-----|
-       7 |     |     |     |     |     |     |     |     | 7
-         |-----|-----|-----|-----|-----|-----|-----|-----|
-            0     1     2     3     4     5     6     7
-    */
+    private static final int BLACK_PAWN_SPECIAL_RANK = 1;
+    private static final int WHITE_PAWN_SPECIAL_RANK = 6;
 
     public Pawn(Player player) {
         super(PAWN_LABEL, player, PAWN_POINT_VALUE);
@@ -53,9 +29,34 @@ public class Pawn extends Piece {
         int[][] endPoints = new int[ChessGame.ROW_COUNT][ChessGame.COLUMN_COUNT];
         int[] curYX = ChessGameUtils_Ng.convertGridPositionTo2DYXArray(current);
         int y = curYX[ChessGameUtils_Ng.Y_INDEX], x = curYX[ChessGameUtils_Ng.X_INDEX];
-        Player colour = this.getPlayer();
+        Player player = this.getPlayer();
 
-//        return endPoints;
-        throw new RuntimeException("NOW IMPLEMENTED YET");
+        int lowX = Math.max(x - PAWN_STEP_SIZE, PieceUtils_Ng.OFF_BOARD_DEFAULT_LOWER_BOUND);
+        int highX = Math.min(x + PAWN_STEP_SIZE, ChessGame.COLUMN_COUNT);
+        boolean blackMeetsLastRelativeIndex = y == ChessGameImpl_Ng.WHITE_ROYAL_FAMILY_INDEX;
+        boolean whiteMeetsLastRelativeIndex = y == ChessGameImpl_Ng.BLACK_ROYAL_FAMILY_INDEX;
+        if (player == Player.BLACK) {
+            if (!blackMeetsLastRelativeIndex) {
+                endPoints[y + 1][lowX] = 1;
+                endPoints[y + 1][x] = 1;
+                endPoints[y + 1][highX] = 1;
+                if (y == BLACK_PAWN_SPECIAL_RANK) {
+                    int highY = BLACK_PAWN_SPECIAL_RANK + PAWN_SPECIAL_STEP_SIZE;
+                    endPoints[highY][x] = 1;
+                }
+            }
+        } else {
+            if (!whiteMeetsLastRelativeIndex) {
+                endPoints[y - 1][lowX] = 1;
+                endPoints[y - 1][x] = 1;
+                endPoints[y - 1][highX] = 1;
+                if (y == WHITE_PAWN_SPECIAL_RANK) {
+                    int lowY = WHITE_PAWN_SPECIAL_RANK - PAWN_SPECIAL_STEP_SIZE;
+                    endPoints[lowY][x] = 1;
+                }
+            }
+        }
+
+        return endPoints;
     }
 }
