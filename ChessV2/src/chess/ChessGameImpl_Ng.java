@@ -11,10 +11,10 @@ import java.util.Map;
  @author Jeffrey Ng
  @created 2020-05-12 */
 public class ChessGameImpl_Ng implements ChessGame {
-    private static final int BLACK_ROYAL_FAMILY_INDEX = 0;
-    private static final int BLACK_PAWN_ROW_INDEX = 1;
-    private static final int WHITE_PAWN_ROW_INDEX = 6;
-    private static final int WHITE_ROYAL_FAMILY_INDEX = 7;
+    public static final int BLACK_ROYAL_FAMILY_INDEX = 0;
+    public static final int BLACK_PAWN_ROW_INDEX = 1;
+    public static final int WHITE_PAWN_ROW_INDEX = 6;
+    public static final int WHITE_ROYAL_FAMILY_INDEX = 7;
     private static final String INNER_CELL_BUFFER = " ";
     private static final String LABEL_EDGE_BUFFER = " ";
     private static final String EMPTY_GRID_POSITION = "   ";
