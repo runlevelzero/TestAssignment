@@ -75,4 +75,21 @@ public class ChessGameUtils_Ng {
     public static int getMaxNumberOfPotentialPiece(Piece p) {
         return maxAmountOfAParticularPiece.get(p);
     }
+
+
+
+    /*
+    | | | |+| | | |
+    | | |+| |+| | |
+    | |+| | | |+| |
+    |+| | |O| | |+|
+    | |+| | | |+| |
+    | | |+| |+| | |
+    | | | |+| | | |
+
+      /|
+    2/ |sqrt(3)
+    /__|
+     1
+    */
 }

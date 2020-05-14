@@ -30,6 +30,7 @@ public abstract class Piece {
 
     public Piece(final Label label, final Player player, final int pointValue) {
         assert labelToPoint.get(label) == pointValue;
+        assert player != null;
 
         this.player = player;
         this.label = label;
@@ -43,11 +44,14 @@ public abstract class Piece {
                                   current   !=  null
 
        Postcondition(s):
-                                piece == PAWN   =>  0 <= rv.size <= 8
+                                piece == PAWN   =>  2 <= rv.size <= 8 or
+                                                    0 <= rv.size <= 4   depending if I want to diff between
+                                                                        player colours. Other method does for
+                                                                        now. Decisions decisions...
                                 piece == ROOK   =>  0 <  rv.size <= 14
                               piece == KNIGHT   =>  0 <  rv.size <= 8
                               piece == BISHOP   =>  0 <  rv.size <= 13
-                               piece == QUEEN   =>  0 <  rv.size <= 27
+                               piece == QUEEN   =>  0 <  rv.size <= 27(?) not 100% sure...
                                 piece == KING   =>  0 <  rv.size <= 8
     */
     public abstract Move_Skeleton[] getMoveListFromCurrentPosition(GridPosition current);
