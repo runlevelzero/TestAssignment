@@ -107,10 +107,10 @@ public class ChessGameUtils_Ng {
         return new int[] {convertRankToYIndex(rank), convertFileToXIndex(file)};
     }
 
-    public static GridPosition convert2DYXArrayToGridPosition(int[] yx) {
+    public static GridPosition convertYXToGridPosition(int y, int x) {
         StringBuilder sb = new StringBuilder();
-        char file = convertXIndexToFile(yx[X_INDEX]);
-        char rank = convertYIndexToRank(yx[Y_INDEX]);
+        char file = convertXIndexToFile(x);
+        char rank = convertYIndexToRank(y);
 
         return GridPosition.translate(sb.append(file).append(rank).toString());
     }

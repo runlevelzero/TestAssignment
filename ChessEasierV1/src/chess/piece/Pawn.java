@@ -32,7 +32,7 @@ public class Pawn extends Piece {
         Player player = this.getPlayer();
 
         int lowX = Math.max(x - PAWN_STEP_SIZE, PieceUtils_Ng.OFF_BOARD_DEFAULT_LOWER_BOUND);
-        int highX = Math.min(x + PAWN_STEP_SIZE, ChessGame.COLUMN_COUNT);
+        int highX = Math.min(x + PAWN_STEP_SIZE, PieceUtils_Ng.OFF_BOARD_DEFAULT_UPPER_BOUND);
         boolean blackMeetsLastRelativeIndex = y == ChessGameImpl_Ng.WHITE_ROYAL_FAMILY_INDEX;
         boolean whiteMeetsLastRelativeIndex = y == ChessGameImpl_Ng.BLACK_ROYAL_FAMILY_INDEX;
         if (player == Player.BLACK) {
@@ -58,5 +58,15 @@ public class Pawn extends Piece {
         }
 
         return endPoints;
+    }
+
+    @Override
+    public GridPosition[] path(GridPosition current, GridPosition end) {
+        return new GridPosition[0];
+    }
+
+    @Override
+    public boolean pathIsPossible(GridPosition current, GridPosition end) {
+        return false;
     }
 }

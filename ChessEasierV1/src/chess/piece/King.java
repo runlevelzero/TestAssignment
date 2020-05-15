@@ -28,9 +28,9 @@ public class King extends Piece {
         int y = curYX[ChessGameUtils_Ng.Y_INDEX], x = curYX[ChessGameUtils_Ng.X_INDEX];
 
         int lowY = Math.max(y - KING_STEP_SIZE, PieceUtils_Ng.OFF_BOARD_DEFAULT_LOWER_BOUND);
-        int highY = Math.min(y + KING_STEP_SIZE, ChessGame.ROW_COUNT);
+        int highY = Math.min(y + KING_STEP_SIZE, PieceUtils_Ng.OFF_BOARD_DEFAULT_UPPER_BOUND);
         int lowX = Math.max(x - KING_STEP_SIZE, PieceUtils_Ng.OFF_BOARD_DEFAULT_LOWER_BOUND);
-        int highX = Math.min(x + KING_STEP_SIZE, ChessGame.COLUMN_COUNT);
+        int highX = Math.min(x + KING_STEP_SIZE, PieceUtils_Ng.OFF_BOARD_DEFAULT_UPPER_BOUND);
 
         for (int row = lowY; row <= highY; row++) {
             for (int col = lowX; col <= highX; col++) {
@@ -41,5 +41,16 @@ public class King extends Piece {
         }
 
         return endPoints;
+    }
+
+    @Override
+    public GridPosition[] path(GridPosition current, GridPosition end) {
+        assert pathIsPossible(current, end);
+        return new GridPosition[] {end};
+    }
+
+    @Override
+    public boolean pathIsPossible(GridPosition current, GridPosition end) {
+        return PieceUtils_Ng.pathIsPossible(this, current, end);
     }
 }

@@ -70,7 +70,9 @@ public abstract class Piece {
     */
     public abstract int[][] getEndpointListFromCurrentPosition(GridPosition current);
 
-    public abstract int[][] getPath(GridPosition current, GridPosition end);
+    public abstract GridPosition[] path(GridPosition current, GridPosition end);
+
+    public abstract boolean pathIsPossible(GridPosition current, GridPosition end);
 
     public String toString() {
         return String.format("%s %s", player, label);

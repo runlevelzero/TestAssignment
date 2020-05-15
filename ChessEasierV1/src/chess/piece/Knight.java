@@ -10,8 +10,12 @@ import chess.utils.ChessGameUtils_Ng;
 public class Knight extends Piece {
     private static final Label KNIGHT_LABEL = Label.KNIGHT;
     private static final int KNIGHT_POINT_VALUE = 3;
+    private static final int KNIGHT_STEP_ONE_INDEX = 0;
+    private static final int KNIGHT_STEP_TWO_INDEX = KNIGHT_STEP_ONE_INDEX + 1;
+    private static final int KNIGHT_STEP_THR_INDEX = KNIGHT_STEP_TWO_INDEX + 1;
     private static final int KNIGHT_STEP_ONE_SIZE = 2;
     private static final int KNIGHT_STEP_TWO_SIZE = 1;
+    private static final int KNIGHT_ALWAYS_TAKES_3_STEPS = 3;
 
     public Knight(Player player) {
         super(KNIGHT_LABEL, player, KNIGHT_POINT_VALUE);
@@ -59,9 +63,9 @@ public class Knight extends Piece {
         int y = curYX[ChessGameUtils_Ng.Y_INDEX], x = curYX[ChessGameUtils_Ng.X_INDEX];
 
         int lowY = Math.max(y - KNIGHT_STEP_ONE_SIZE, PieceUtils_Ng.OFF_BOARD_DEFAULT_LOWER_BOUND);
-        int highY = Math.min(y + KNIGHT_STEP_ONE_SIZE, ChessGame.ROW_COUNT);
+        int highY = Math.min(y + KNIGHT_STEP_ONE_SIZE, PieceUtils_Ng.OFF_BOARD_DEFAULT_UPPER_BOUND);
         int lowX = Math.max(x - KNIGHT_STEP_ONE_SIZE, PieceUtils_Ng.OFF_BOARD_DEFAULT_LOWER_BOUND);
-        int highX = Math.min(x + KNIGHT_STEP_ONE_SIZE, ChessGame.COLUMN_COUNT);
+        int highX = Math.min(x + KNIGHT_STEP_ONE_SIZE, PieceUtils_Ng.OFF_BOARD_DEFAULT_UPPER_BOUND);
 
         for (int row = lowY; row <= highY; row++) {
             for (int col = lowX; col <= highX; col++) {
@@ -82,5 +86,56 @@ public class Knight extends Piece {
         }
 
         return endPoints;
+    }
+
+    @Override
+    public GridPosition[] path(GridPosition current, GridPosition end) {
+        assert pathIsPossible(current, end);
+
+        int[] curYX = ChessGameUtils_Ng.convertGridPositionTo2DYXArray(current);
+        int[] endYX = ChessGameUtils_Ng.convertGridPositionTo2DYXArray(end);
+
+        int curY = curYX[ChessGameUtils_Ng.Y_INDEX], curX = curYX[ChessGameUtils_Ng.X_INDEX];
+        int endY = endYX[ChessGameUtils_Ng.Y_INDEX], endX = endYX[ChessGameUtils_Ng.X_INDEX];
+
+        boolean N = endY + KNIGHT_STEP_ONE_SIZE == curY && endX + KNIGHT_STEP_TWO_SIZE == curX ||
+                    endY + KNIGHT_STEP_ONE_SIZE == curY && endX - KNIGHT_STEP_TWO_SIZE == curX;
+
+        boolean E = endY + KNIGHT_STEP_TWO_SIZE == curY && endX - KNIGHT_STEP_ONE_SIZE == curX ||
+                    endY - KNIGHT_STEP_TWO_SIZE == curY && endX - KNIGHT_STEP_ONE_SIZE == curX;
+
+        boolean S = endY - KNIGHT_STEP_ONE_SIZE == curY && endX - KNIGHT_STEP_TWO_SIZE == curX ||
+                    endY - KNIGHT_STEP_ONE_SIZE == curY && endX + KNIGHT_STEP_TWO_SIZE == curX;
+
+        boolean W = endY - KNIGHT_STEP_TWO_SIZE == curY && endX + KNIGHT_STEP_ONE_SIZE == curX ||
+                    endY + KNIGHT_STEP_TWO_SIZE == curY && endX + KNIGHT_STEP_ONE_SIZE == curX;
+
+        GridPosition[] path = new GridPosition[KNIGHT_ALWAYS_TAKES_3_STEPS];
+
+        GridPosition step1 = current, step2 = end;
+        if (N) {
+            step1 = ChessGameUtils_Ng.convertYXToGridPosition(curY - 1, curX);
+            step2 = ChessGameUtils_Ng.convertYXToGridPosition(curY - 2, curX);
+        } else if (E) {
+            step1 = ChessGameUtils_Ng.convertYXToGridPosition(curY, curX + 1);
+            step2 = ChessGameUtils_Ng.convertYXToGridPosition(curY, curX + 2);
+        } else if (S) {
+            step1 = ChessGameUtils_Ng.convertYXToGridPosition(curY + 1, curX);
+            step2 = ChessGameUtils_Ng.convertYXToGridPosition(curY + 2, curX);
+        } else if (W) {
+            step1 = ChessGameUtils_Ng.convertYXToGridPosition(curY, curX - 1);
+            step2 = ChessGameUtils_Ng.convertYXToGridPosition(curY, curX - 2);
+        }
+
+        path[KNIGHT_STEP_ONE_INDEX] = step1;
+        path[KNIGHT_STEP_TWO_INDEX] = step2;
+        path[KNIGHT_STEP_THR_INDEX] = end;
+
+        return path;
+    }
+
+    @Override
+    public boolean pathIsPossible(GridPosition current, GridPosition end) {
+        return PieceUtils_Ng.pathIsPossible(this, current, end);
     }
 }

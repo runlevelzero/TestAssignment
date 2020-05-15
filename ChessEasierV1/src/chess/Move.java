@@ -1,6 +1,7 @@
 package chess;
 
 import chess.piece.Piece;
+import chess.piece.utils.PieceUtils_Ng;
 import chess.utils.ChessGameUtils_Ng;
 
 /**
@@ -10,13 +11,19 @@ public class Move {
     private final Piece piece;
     private final GridPosition current;
     private final GridPosition end;
+    public static final int LONGEST_PATH_POSSIBLE = 7;
 
     public Move(Piece piece, GridPosition current, GridPosition end) {
         assert current != end;
+        assert piece.pathIsPossible(current, end);
 
         this.piece = piece;
         this.current = current;
         this.end = end;
+    }
+
+    public GridPosition[] getPath() {
+        return piece.path(current, end);
     }
 
     /*

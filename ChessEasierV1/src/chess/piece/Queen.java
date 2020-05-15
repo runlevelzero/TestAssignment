@@ -42,4 +42,28 @@ public class Queen extends Piece {
 
         return endPoints;
     }
+
+    @Override
+    public GridPosition[] path(GridPosition current, GridPosition end) {
+        assert pathIsPossible(current, end);
+
+        int[] curYX = ChessGameUtils_Ng.convertGridPositionTo2DYXArray(current);
+        int[] endYX = ChessGameUtils_Ng.convertGridPositionTo2DYXArray(end);
+
+        int curY = curYX[ChessGameUtils_Ng.Y_INDEX], curX = curYX[ChessGameUtils_Ng.X_INDEX];
+        int endY = endYX[ChessGameUtils_Ng.Y_INDEX], endX = endYX[ChessGameUtils_Ng.X_INDEX];
+
+        int yDiff = endY - curY;
+        int xDiff = endX - curX;
+
+        boolean isVerticalOrHorizontal = xDiff == 0 || yDiff == 0;
+
+        return isVerticalOrHorizontal ? new Rook(Player.BLACK).path(current, end) :
+               new Bishop(Player.BLACK).path(current, end);
+    }
+
+    @Override
+    public boolean pathIsPossible(GridPosition current, GridPosition end) {
+        return PieceUtils_Ng.pathIsPossible(this, current, end);
+    }
 }

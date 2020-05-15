@@ -1,6 +1,7 @@
 package chess.piece;
 
 import chess.*;
+import chess.piece.utils.PieceUtils_Ng;
 import chess.utils.ChessGameUtils_Ng;
 
 /**
@@ -40,5 +41,53 @@ public class Rook extends Piece {
         endPoints[y][x] = 0;
 
         return endPoints;
+    }
+
+    @Override
+    public GridPosition[] path(GridPosition current, GridPosition end) {
+        assert pathIsPossible(current, end);
+
+        int[] curYX = ChessGameUtils_Ng.convertGridPositionTo2DYXArray(current);
+        int[] endYX = ChessGameUtils_Ng.convertGridPositionTo2DYXArray(end);
+
+        int curY = curYX[ChessGameUtils_Ng.Y_INDEX], curX = curYX[ChessGameUtils_Ng.X_INDEX];
+        int endY = endYX[ChessGameUtils_Ng.Y_INDEX], endX = endYX[ChessGameUtils_Ng.X_INDEX];
+
+        int yDiff = endY - curY;
+        int xDiff = endX - curX;
+
+        boolean up = curY > endY;
+        boolean down = curY < endY;
+        boolean left = curX > endX;
+        boolean right = curX < endX;
+
+        int diff = left || right ? xDiff : yDiff;
+        diff = Math.abs(diff);
+
+        GridPosition[] path = new GridPosition[diff];
+        int pathIndex = 0;
+
+        int row = curY, col = curX;
+        for (int i = 1; i <= diff; i++) {
+            if (up) {
+                row -= i;
+            } else if (down) {
+                row += i;
+            } else if (left) {
+                col -= i;
+            } else if (right) {
+                col += 1;
+            }
+            GridPosition gp = ChessGameUtils_Ng.convertYXToGridPosition(row, col);
+            path[pathIndex] = gp;
+            pathIndex += 1;
+        }
+
+        return path;
+    }
+
+    @Override
+    public boolean pathIsPossible(GridPosition current, GridPosition end) {
+        return PieceUtils_Ng.pathIsPossible(this, current, end);
     }
 }
