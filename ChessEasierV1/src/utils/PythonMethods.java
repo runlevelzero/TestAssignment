@@ -268,13 +268,17 @@ public class PythonMethods {
         StringBuilder sb = new StringBuilder();
 
         for (Object element : obj) {
-            Class<?> eClass = element.getClass();
-            if (eClass.isArray()) {
-                Object[] aux = new Object[] {element};
-                String temp = deepToString(aux);
-                sb.append(temp);
+            if (element != null) {
+                Class<?> eClass = element.getClass();
+                if (eClass.isArray()) {
+                    Object[] aux = new Object[] {element};
+                    String temp = deepToString(aux);
+                    sb.append(temp);
+                } else {
+                    sb.append(element);
+                }
             } else {
-                sb.append(element);
+                sb.append("null");
             }
             sb.append(' ');
         }
