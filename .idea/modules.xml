@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ChessEasierV1/ChessEasierV1.iml" filepath="$PROJECT_DIR$/ChessEasierV1/ChessEasierV1.iml" />
       <module fileurl="file://$PROJECT_DIR$/ChessV2/ChessV2.iml" filepath="$PROJECT_DIR$/ChessV2/ChessV2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ClockV1/ClockV1.iml" filepath="$PROJECT_DIR$/ClockV1/ClockV1.iml" />
       <module fileurl="file://$PROJECT_DIR$/PacManV2/PacManV2.iml" filepath="$PROJECT_DIR$/PacManV2/PacManV2.iml" />
       <module fileurl="file://$PROJECT_DIR$/TestAssignment.iml" filepath="$PROJECT_DIR$/TestAssignment.iml" />
     </modules>

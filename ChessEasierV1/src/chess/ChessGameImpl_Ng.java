@@ -1,11 +1,10 @@
 package chess;
 
 import chess.piece.*;
-import chess.utils.*;
+import chess.utils.ChessGameUtils_Ng;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  @author Jeffrey Ng
@@ -59,96 +58,39 @@ public class ChessGameImpl_Ng implements ChessGame {
         return board[y][x];
     }
 
-    private GridPosition getCurrentGridPositionOfPiece(Piece piece, char file, GridPosition end) {
-        char endFile = end.getFile();
-        int endFileY = ChessGameUtils_Ng.convertFileToXIndex(endFile);
-        int itr = 0;
-        int[][] yxPotentials = new int[8][2];
-        for (int row = 0; row < ChessGame.ROW_COUNT; row++) {
-            for (int col = 0; col < ChessGame.COLUMN_COUNT; col++) {
-                if (board[row][col].equals(piece)) {
-                    yxPotentials[itr] = new int[] {row, col};
-                    itr += 1;
-                }
-            }
-        }
-
-        throw new RuntimeException("NOT IMPLEMENTED YET!!");
-    }
-
     @Override
-    public void movePiece(Piece piece, GridPosition end) {
-//        assert isAmbiguousMove(piece, end);
-        char file = end.getFile();
-        movePiece(piece, file, end);
-    }
+    public void movePiece(GridPosition start, GridPosition end) {
+        assert isValidMove(start, end);
 
-    @Override
-    public void movePiece(Piece piece, char file, GridPosition end) {
-//        assert isValidMove(piece, file, end);
-        GridPosition current = getCurrentGridPositionOfPiece(piece, file, end);
+        int startX = ChessGameUtils_Ng.convertFileToXIndex(start.getFile());
+        int startY = ChessGameUtils_Ng.convertRankToYIndex(start.getRank());
 
-        Move mv = new Move(piece, current, end);
+        Piece p = getPiece(start);
+        Move mv = new Move(p, start, end);
+        int[] dYdX = mv.getYXDelta();
 
-        int[] curYX = ChessGameUtils_Ng.convertGridPositionTo2DYXArray(current);
-        int curY = curYX[ChessGameUtils_Ng.Y_INDEX], curX = curYX[ChessGameUtils_Ng.X_INDEX];
-
-        int[] update = mv.getYXDelta();
-        int dY = update[DELTA_Y_INDEX], dX = update[DELTA_X_INDEX];
-
-        board[curY][curX] = EMPTY_SPACE;
-        board[curY + dY][curX + dX] = piece;
+        board[startY][startX] = EMPTY_SPACE;
+        board[startY + dYdX[DELTA_Y_INDEX]][startX + dYdX[DELTA_X_INDEX]] = p;
         moveHistory.add(mv);
     }
 
     @Override
-    public boolean isAmbiguousMove(Piece piece, GridPosition end) {
-        boolean ambiguous = false;
+    public boolean isValidMove(GridPosition start, GridPosition end) {
+        boolean valid = false;
+        Piece p = getPiece(start);
+//        p.get
 
-        int endFile = ChessGameUtils_Ng.convertFileToXIndex(end.getFile());
-        int endRank = ChessGameUtils_Ng.convertRankToYIndex(end.getRank());
-
-        int itr = 0;
-        int[][] yxPotentials = new int[8][2];
-        for (int row = 0; row < ChessGame.ROW_COUNT; row++) {
-            for (int col = 0; col < ChessGame.COLUMN_COUNT; col++) {
-                if (board[row][col].equals(piece)) {
-                    yxPotentials[itr] = new int[] {row, col};
-                    itr += 1;
-                }
-            }
-        }
-
-        int potentialPieces = itr;
-        int[][] boardMapping = new int[ChessGame.ROW_COUNT][ChessGame.COLUMN_COUNT];
-        int endPointTotals = 0;
-
-        if (piece instanceof Pawn) {
-            for (int p = 0; p < potentialPieces; p++) {
-                GridPosition gp = ChessGameUtils_Ng.convert2DYXArrayToGridPosition(yxPotentials[p]);
-                int[][] endPoints = piece.getEndpointListFromCurrentPosition(gp);
-                int endPointCur = endPoints[endRank][endFile];
-                endPointTotals += endPointCur;
-            }
-
-            if (endPointTotals == 2) {
-                ambiguous = true;
-            }
-
-        }
-
-//        return ambiguous;
-        throw new RuntimeException("NOT IMPLEMENTED YET!!");
-    }
-
-    @Override
-    public boolean isValidMove(Piece piece, char file, GridPosition end) {
-        throw new RuntimeException("NOT IMPLEMENTED YET!!");
+        return valid;
     }
 
     @Override
     public boolean isCheckmated() {
         throw new RuntimeException("NOT IMPLEMENTED YET!!");
+    }
+
+    @Override
+    public List<Move> getMoveHistory() {
+        return moveHistory;
     }
 
     @Override
